@@ -48,9 +48,9 @@ Le projet inclut l'intégration de graphiques et de diagrammes interactifs pour 
 
 ### étape 1 - Lancer le backend :
 
-    ```
+
     $ git clone https://github.com/OpenClassrooms-Student-Center/SportSee
-    ```
+
 
 Suivez les indications dans le README du projet backend.
 
