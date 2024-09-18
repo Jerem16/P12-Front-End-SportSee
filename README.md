@@ -1,4 +1,5 @@
 # P12-Front-End-SportSee Tableau de Bord d'Analytics SportSee
+
 ## Description du Projet
 
 Ce projet consiste à développer une nouvelle page profil pour le site de **SportSee**, une startup dédiée au coaching sportif. L'objectif est de permettre aux utilisateurs de suivre leurs performances sportives, telles que le nombre de sessions réalisées et les calories brûlées.
@@ -46,6 +47,10 @@ Le projet inclut l'intégration de graphiques et de diagrammes interactifs pour 
 ## Comment lancer l'application en local ?
 
 ### étape 1 - Lancer le backend :
+
+    ```
+    $ git clone https://github.com/OpenClassrooms-Student-Center/SportSee
+    ```
 
 Suivez les indications dans le README du projet backend.
 
