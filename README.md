@@ -44,6 +44,10 @@ Le projet inclut l'intégration de graphiques et de diagrammes interactifs pour 
     yarn install
     ```
 
+    ```
+    ! choose "@babel/plugin-syntax-flow" Version : 7.14.5
+    ```
+
 ## Comment lancer l'application en local ?
 
 ### étape 1 - Lancer le backend :
@@ -54,9 +58,7 @@ Suivez les indications dans le README du projet backend.
 
 ### étape 2 - Lancer le frontend :
 
-### `npm start`
-
-### `yarn start`
+### `npm start` || ### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

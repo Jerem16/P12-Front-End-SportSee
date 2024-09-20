@@ -1,0 +1,28 @@
+{
+    "language": "Langue",
+    "scrollLinks": [
+        {
+            "text": "Accueil"
+        },
+        {
+            "text": "À propos"
+        },
+        {
+            "text": "Services"
+        },
+        {
+            "text": "Portfolio"
+        }
+    ],
+    "routerLinks": [
+        {
+            "text": "Accueil"
+        },
+        {
+            "text": "Blog"
+        },
+        {
+            "text": "Contact"
+        }
+    ]
+}

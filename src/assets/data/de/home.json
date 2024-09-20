@@ -1,0 +1,28 @@
+{
+    "home": {
+        "welcome": "Guten Tag, ich heiße ",
+        "name": "‘‘Jérémy Lemaignent’’",
+        "presentation": "Ich bin ",
+        "titleDescription": "Leidenschaftlicher Entwickler seit 2 Jahren’’",
+        "description": "Ich bin spezialisiert auf die Entwicklung und Gestaltung von Websites.",
+        "additionalDescription": "Eine Kombination aus Leistung und grafischem Design.",
+        "quote": "Meine Fähigkeiten reichen von der Website-Gestaltung bis zur Front-End-Programmierung.",
+        "question": "",
+        "answer": "Treten Sie mir bei.",
+        "imageSrc": "test.png",
+        "hireButtonText": "Kontaktieren Sie mich",
+        "typedStrings": [
+            "",
+            "Webentwickler.",
+            "",
+            "",
+            "Webintegrator.",
+            "",
+            "Grafikdesigner.",
+            "",
+            "Webdesigner.",
+            "",
+            ""
+        ]
+    }
+}

@@ -1,0 +1,49 @@
+/* nav-bar */
+@import "../00_utils/4_fonts";
+
+.logo {
+    width: calc(20% - 30px);
+    height: 58px;
+    display: inline-flex;
+    align-items: center;
+    // border: 1px solid #000;
+    .my-logo {
+        max-width: 58px;
+        max-height: 58px;
+        .red-bg_icon {
+            fill: $shp-text-red-h1;
+        }
+        .black-content_icon {
+            fill: $nav-bg-black;
+        }
+    }
+    .nav-title {
+        @include nav-title;
+        margin-left: 10px;
+    }
+}
+.nav-link {
+    display: block;
+    @include nav-link;
+    // border: 1px solid #000;
+    width: calc(20% - 30px);
+    text-align: center;
+}
+.nav-bar {
+    width: 1440px;
+    height: 90px;
+    background-color: $nav-bg-black;
+    // background-color: $text-grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 29px;
+    padding-right: 29px;
+}
+/*
+
+className="red-bg_icon"
+className="black-content_icon"
+
+*/
