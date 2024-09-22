@@ -1,0 +1,60 @@
+/* sidebar */
+.side-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+    .red-content_icon {
+        fill: #ff0101;
+    }
+    .white-bg_icon {
+        fill: $text-white;
+    }
+}
+
+.sidebar {
+    width: 117px;
+    height: 1024px;
+    background-color: $nav-bg-black;
+    // background-color: $text-grey;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-left: 26px;
+    padding-right: 26px;
+    position: relative;
+    top: -90px;
+    left: 0;
+    z-index: 99;
+}
+.side-nav {
+    width: 64px;
+    height: 316px;
+    // background: rgb(255, 0, 0);
+}
+.copyright {
+    position: absolute;
+    width: 24px;
+    height: 146px;
+    bottom: 49px;
+    // top: 965px;
+    left: 42px;
+    // background: green;
+    // z-index: 1000;
+    .vertical-text {
+        writing-mode: vertical-rl; /* Texte en vertical, de droite à gauche */
+        transform: rotate(
+            180deg
+        ); /* Si vous souhaitez inverser la direction du texte */
+        text-align: right; /* Centrer le texte horizontalement dans son conteneur */
+        // width: 24px;
+        // height: 148px;
+        // top: 965px;
+        // left: 42px;
+        // opacity: 0px;
+        @include side-copyright;
+        // color: blue;
+    }
+}

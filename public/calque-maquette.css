@@ -1,0 +1,84 @@
+@media screen and (max-width: 1440px) {
+    body {
+        background-image: url(./Maquette-1440.webp);
+        background-size: 1440px 1024px;
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
+
+    .main-container {
+        opacity: 0.5;
+        color: blue;
+    }
+
+    /* .accommodations-and-popular {
+        background: rgba(0, 255, 255, 0.455);
+    }
+    .activity-in-marseille, .popular-group-cards {
+        background: rgba(255, 166, 0, 0.451);
+    }
+    .activity-in-marseille h1, .popular-title, #accommodations .font-h1 {
+        background: rgba(255, 0, 0, 0.448);
+    }
+    .full-row_100, .accommodations-cards {
+        background: rgba(21, 222, 10, 0.484);
+    } */
+}
+
+@media screen and (max-width: 1438px) {
+    body {
+        background-image: none;
+    }
+    .main-container {
+        opacity: 1;
+        color: black;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        max-width: 1024px;
+        background-image: url(../images/Tablette.jpg);
+        background-size: 1024px 2001px;
+    }
+
+    .main-container {
+        opacity: 0.5;
+        color: blue;
+    }
+}
+
+@media screen and (max-width: 1022px) {
+    body {
+        background-image: none;
+    }
+
+    .main-container {
+        opacity: 1;
+        color: black;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .main-container {
+        opacity: 0.5;
+        color: blue;
+    }
+    body {
+        max-width: 375px;
+        background-image: url(../images/Mobile.jpg);
+        background-size: 375px 4122px;
+    }
+}
+
+@media screen and (max-width: 373px) {
+    body {
+        max-width: 374px;
+        background-image: none;
+    }
+
+    .main-container {
+        opacity: 1;
+        color: black;
+    }
+}

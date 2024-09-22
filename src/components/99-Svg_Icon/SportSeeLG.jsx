@@ -1,5 +1,5 @@
 import React from "react";
-const MyLogo = () => {
+const SportSeeLG = () => {
     return (
         <div className="my-logo">
             <svg
@@ -26,4 +26,4 @@ const MyLogo = () => {
         </div>
     );
 };
-export default React.memo(MyLogo);
+export default React.memo(SportSeeLG);

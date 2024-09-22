@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MyLogo from "../99-Svg_Icon/MyLogo";
-
+import SportSeeLG from "../99-Svg_Icon/SportSeeLG";
 
 const Logo = () => {
     return (
         <Link className="logo" to="/">
-            <MyLogo />
+            <SportSeeLG />
             <h1 className="nav-title">SportSee</h1>
         </Link>
     );
