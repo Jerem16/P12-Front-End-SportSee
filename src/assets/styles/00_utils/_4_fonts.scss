@@ -29,22 +29,22 @@
     color: $text-white;
 }
 
-//? Section Daily Activity */
+//? Section weekly Activity */
 
 @mixin sda-h2() {
     @include font-base();
     font-style: normal;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 48px;
     color: $text-black-900;
 }
 
-@mixin sda-grey() {
+@mixin sda-support() {
     @include font-base();
+    font-size: 18px;
     font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    color: $text-grey;
+    font-weight: 400;
+    color: $text-black-900;
 }
 
 //? Section Resume Activity */
@@ -112,7 +112,7 @@
     color: $text-grey;
 }
 
-//? Section Consumption */
+//? Section Daily Consumption */
 
 @mixin sc-text-dark() {
     @include font-base();

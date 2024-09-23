@@ -8,8 +8,10 @@
 @import "./02_components/00_nav-bar";
 @import "./02_components/000_sidebar";
 @import "./02_components/001_section-hello";
-@import "./02_components/002_section-daily_activity";
-@import "./02_components/003_section_consumption";
+@import "./02_components/002_section-weekly_activity";
+@import "./02_components/003_section_daily-consumption";
 
 @import "./03_page/00_page";
 @import "./03_page/01_home";
+
+@import "./04_responsive/01_1440px-1080px";

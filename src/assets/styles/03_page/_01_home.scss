@@ -1,0 +1,49 @@
+.section-hello {
+    h2.hello {
+        @include sda-h2();
+        margin-bottom: 42px;
+        .name {
+            color: $nav-title-red;
+        }
+    }
+    .support {
+        @include sda-support();
+        margin-bottom: 77px;
+    }
+}
+
+.dashboard-overview {
+    width: 100%;
+    height: 610px;
+    // background: green;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .activity-summary {
+        width: 835px;
+        height: 610px;
+        .weekly_activity,
+        .weekly_resume-activity {
+            width: 835px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+        }
+        .weekly_activity {
+            height: 320px;
+            background: $sda-bg-color;
+            margin-bottom: 28px;
+        }
+        .weekly_resume-activity {
+            height: 263px;
+            background: $shp-text-red-h1;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .daily_consumption {
+        width: 258px;
+        height: 613px;
+        background: $sda-bg-color;
+    }
+}

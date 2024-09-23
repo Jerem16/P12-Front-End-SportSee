@@ -13,8 +13,11 @@
     padding-top: 5px;
     padding-left: 29px;
     // padding-right: 47px;
-    position: relative;
+    position: fixed;
+    // left: 0;
     z-index: 100;
+    // margin: 0 auto !important;
+    align-self: center;
     .logo {
         width: calc(178px);
         height: 58px;
