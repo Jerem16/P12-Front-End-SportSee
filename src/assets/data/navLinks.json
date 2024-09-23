@@ -1,0 +1,26 @@
+[
+    {
+        "id": "homeLink",
+        "label": "Accueil",
+        "path": "/",
+        "title": "Aller à la page d'accueil"
+    },
+    {
+        "id": "profileLink",
+        "label": "Profil",
+        "path": "/profile",
+        "title": "Voir votre profil"
+    },
+    {
+        "id": "settingLink",
+        "label": "Réglage",
+        "path": "/setting",
+        "title": "Réglages de votre compte"
+    },
+    {
+        "id": "communityLink",
+        "label": "Communauté",
+        "path": "/community",
+        "title": "Accéder à la communauté"
+    }
+]

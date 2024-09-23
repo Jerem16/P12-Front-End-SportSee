@@ -1,0 +1,12 @@
+main {
+    position: absolute;
+    width: calc(100vw - 117px);
+    max-width: calc(1440px - 117px);
+    // margin: 0 auto;
+    top: 90px;
+    left: 117px;
+    z-index: 1000;
+    background: red;
+    margin: 65px 0 0 0;
+    padding: 0 109px 0 90px;
+}
