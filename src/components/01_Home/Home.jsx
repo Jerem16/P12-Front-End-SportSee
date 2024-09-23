@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 // import user from "../../assets/data/user.json";
 import Hello from "./Hello";
 
+import WeeklyActivity from "./WeeklyActivity";
+
 // Assurez-vous que le chemin d'importation est correct
 
 /**
@@ -18,7 +20,9 @@ const Home = () => {
             <Hello />
             <div className="dashboard-overview">
                 <div className="activity-summary">
-                    <section className="weekly_activity"></section>
+                    <section className="weekly_activity">
+                        <WeeklyActivity />
+                    </section>
                     <section className="weekly_resume-activity"></section>
                 </div>
                 <section className="daily_consumption"></section>
