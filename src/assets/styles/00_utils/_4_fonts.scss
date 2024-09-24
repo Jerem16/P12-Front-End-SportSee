@@ -47,6 +47,14 @@
     color: $text-black-900;
 }
 
+@mixin weekly_activity-title() {
+    @include font-base();
+    color: $text-black-900;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
 //? Section Resume Activity */
 //* F-1 */
 
