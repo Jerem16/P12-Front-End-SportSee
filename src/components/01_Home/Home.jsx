@@ -1,11 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-// import user from "../../assets/data/user.json";
+import React, { useEffect } from "react";
+import activityData from "../../assets/data/activity.json";
 import Hello from "./Hello";
-
+import DataHandler from "../../utils/DataHandler";
 import WeeklyActivity from "./WeeklyActivity";
-
-// Assurez-vous que le chemin d'importation est correct
 
 /**
  * Home component that renders the homepage content.
@@ -13,7 +10,27 @@ import WeeklyActivity from "./WeeklyActivity";
  * @returns {JSX.Element} The rendered Home component
  */
 const Home = () => {
-    // const firstName = user.data.userInfos.firstName; // Récupération du prénom
+    // useEffect(() => {
+    //     // 1. Tester l'API
+    //     const apiDataHandler = new DataHandler(
+    //         "http://localhost:3000",
+    //         "/user/12/activity"
+    //     );
+    //     apiDataHandler
+    //         .fetchData()
+    //         .then((data) => {
+    //             // const nv = data;
+    //             return data;
+    //         })
+    //         .catch((err) => {
+    //             console.error(
+    //                 "Erreur lors de la récupération des données API :",
+    //                 err
+    //             );
+    //         });
+    //     console.log("apiDataHandler", apiDataHandler.data);
+
+    // }, []);
 
     return (
         <main>

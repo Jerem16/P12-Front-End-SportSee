@@ -1,5 +1,4 @@
 import React from "react";
-import CircleLoader from "../99-Svg_Icon/CircleLoader";
 
 
 const Loader = () => {
@@ -15,7 +14,6 @@ export default React.memo(Loader);
 export const Loading = () => {
     return (
         <div className="loading">
-            <CircleLoader />
         </div>
     );
 };

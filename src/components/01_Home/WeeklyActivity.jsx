@@ -1,4 +1,4 @@
-import React, { PureComponent, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {
     BarChart,
     Bar,
@@ -10,16 +10,7 @@ import {
     ResponsiveContainer,
 } from "recharts";
 import WeeklyActivityTitle from "./WeeklyActivityTitle";
-
-const data = [
-    { day: "2020-07-01", kilogram: 80, calories: 240 },
-    { day: "2020-07-02", kilogram: 80, calories: 220 },
-    { day: "2020-07-03", kilogram: 81, calories: 280 },
-    { day: "2020-07-04", kilogram: 81, calories: 290 },
-    { day: "2020-07-05", kilogram: 80, calories: 160 },
-    { day: "2020-07-06", kilogram: 78, calories: 162 },
-    { day: "2020-07-07", kilogram: 76, calories: 390 },
-];
+import { Loading } from "../Loader/Loader";
 
 const CustomBarShape = (props) => {
     const { x, y, width, height, fill } = props;
@@ -67,40 +58,63 @@ const CustomYAxisTick = ({ x = 0, y = 0, payload }) => (
     </text>
 );
 
-export default class WeeklyActivity extends PureComponent {
-    render() {
-        const formattedData = data.map((entry, index) => {
-            return {
-                ...entry,
-                day: index + 1,
-            };
-        });
+const WeeklyActivity = () => {
+    const [isDataLoading, setDataLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [apiData, setApiData] = useState(null); // Set default to null for object
 
-        const minKg = Math.min(...formattedData.map((d) => d.kilogram)) - 1;
-        const maxKg = Math.max(...formattedData.map((d) => d.kilogram)) + 2;
+    useEffect(() => {
+        async function getData() {
+            setDataLoading(true);
+            try {
+                const response = await fetch(
+                    `http://localhost:3000/user/12/activity`
+                );
+                const data = await response.json();
+                console.log(data);
+                setApiData(data); // API data should be saved properly
+            } catch (err) {
+                setError(err);
+            } finally {
+                setDataLoading(false);
+            }
+        }
+        getData();
+    }, []);
 
-        return (
-            <>
-                <WeeklyActivityTitle />
+    if (error) {
+        return <div>Une erreur est survenue : {error.message}</div>;
+    }
+
+    const formattedData = apiData?.data?.activities || []; // Access data.activities
+
+    const minKg = Math.min(...formattedData.map((d) => d.kilogram)) - 1;
+    const maxKg = Math.max(...formattedData.map((d) => d.kilogram)) + 2;
+    console.log("apiData", apiData);
+
+    return (
+        <>
+            <WeeklyActivityTitle />
+            {isDataLoading ? (
+                <div className="loader-wrapper">
+                    <Loading />
+                    <p className="weekly_activity-title">
+                        Chargement des données...
+                    </p>
+                </div>
+            ) : (
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         width={600}
                         height={320}
-                        data={formattedData}
+                        data={formattedData} // Use formattedData here
                         margin={{
                             top: 65,
                             right: 30,
                             left: 43,
                             bottom: 32,
                         }}
-                        // padding={{ left: 10, right: 10 }}
                     >
-                        {/* <defs>
-                            <linearGradient id="MyGradient">
-                                <stop offset="5%" stop-color="green" />
-                                <stop offset="95%" stop-color="gold" />
-                            </linearGradient>
-                        </defs> */}
                         <CartesianGrid
                             stroke="#DEDEDE"
                             strokeDasharray="3 3"
@@ -113,7 +127,6 @@ export default class WeeklyActivity extends PureComponent {
                             stroke="#DEDEDE"
                             interval={0}
                             strokeWidth={1.25}
-                            // scale="linear"
                             tick={<CustomXAxisTick />}
                             padding={{ left: -49, right: -47 }}
                         />
@@ -139,7 +152,7 @@ export default class WeeklyActivity extends PureComponent {
                         />
                         <Tooltip
                             cursor={{
-                                fill: "	#c4c4c4",
+                                fill: "#c4c4c4",
                                 opacity: "0.5",
                             }}
                             content={({ active, payload }) => {
@@ -190,13 +203,9 @@ export default class WeeklyActivity extends PureComponent {
                                 fontFamily: "Roboto, sans-serif",
                             }}
                         />
-                        <defs>
-                            <linearGradient></linearGradient>
-                        </defs>
                         <Bar
                             dataKey="kilogram"
                             fill="#282d30"
-                            // fill="green"
                             barSize={8}
                             yAxisId="right"
                             name="Poids (kg)"
@@ -205,7 +214,6 @@ export default class WeeklyActivity extends PureComponent {
                         <Bar
                             dataKey="calories"
                             fill="#e60000"
-                            // fill="green"
                             barSize={8}
                             yAxisId="left"
                             name="Calories brûlées (kCal)"
@@ -213,7 +221,9 @@ export default class WeeklyActivity extends PureComponent {
                         />
                     </BarChart>
                 </ResponsiveContainer>
-            </>
-        );
-    }
-}
+            )}
+        </>
+    );
+};
+
+export default WeeklyActivity;

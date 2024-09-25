@@ -35,9 +35,37 @@ body {
         // background: green !important;
     }
 }
-#radiusBD {
-    border-top-left-radius: 4px !important;
-    border-top-right-radius: 4px !important;
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-end;
+    flex-flow: column;
+    margin: 0 auto;
+    height: 100%;
+    .loading {
+        padding: 10px;
+        border: 6px solid $nav-title-red;
+        border-bottom-color: transparent;
+        border-radius: 22px;
+        animation: rotate 1s infinite linear;
+        height: 0;
+        width: 0;
+    }
+    p.weekly_activity-title {
+        padding: 10px;
+        @include weekly_activity-title();
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 @media screen and (max-width: 1440px) {
     body {
