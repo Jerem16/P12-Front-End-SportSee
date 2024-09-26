@@ -69,11 +69,20 @@
         }
         .weekly_resume-activity {
             height: 263px;
-            background: $shp-text-red-h1;
+            background: green;
             display: flex;
             justify-content: space-between;
 
-            display: none;
+            // display: none;
+            .charts-frame {
+                width: 258px;
+                height: 263px;
+                border-radius: 5px;
+                box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+            }
+            .session {
+                background: $shp-text-red-h1;
+            }
         }
     }
 
