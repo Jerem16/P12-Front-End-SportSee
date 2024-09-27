@@ -11,12 +11,12 @@ import PropTypes from "prop-types";
  */
 const Copyright = ({ year, string }) => {
     return (
-        <div className="copyright">
+        <footer className="copyright">
             <p className="vertical-text">
                 {string}
                 {year}
             </p>
-        </div>
+        </footer>
     );
 };
 

@@ -2,11 +2,7 @@ import React from "react";
 import FetchData from "../../../../utils/FetchData";
 import dataMocked from "../../../../assets/data/sessions.json";
 import SessionLengthTitle from "./SessionLengthTitle";
-import {
-    CustomBarShape,
-    CustomXAxisTick,
-    CustomYAxisTick,
-} from "./CustomShapes";
+import { CustomXAxisTick, CustomCursor } from "./CustomShapes";
 import {
     LineChart,
     Line,
@@ -14,14 +10,27 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend,
     ResponsiveContainer,
 } from "recharts";
 
 const SessionLength = () => {
     const path = "http://localhost:3000";
     const userId = 12;
-    const endPoint = "activity";
+    const endPoint = "average-sessions";
+
+    // Fonction pour convertir les jours en abréviations
+    function convertDayToLetter(day) {
+        const dayMap = {
+            1: "L", // Lundi
+            2: "Me", // Mardi
+            3: "M", // Mercredi
+            4: "J", // Jeudi
+            5: "V", // Vendredi
+            6: "S", // Samedi
+            7: "D", // Dimanche
+        };
+        return dayMap[day] || ""; // Retourne une chaîne vide si le jour n'est pas valide
+    }
 
     return (
         <FetchData
@@ -32,60 +41,63 @@ const SessionLength = () => {
             dataMocked={dataMocked}
         >
             {(apiData) => {
-                const formattedData = apiData?.data?.sessions || [];
+                // Récupération et formatage des données
+                let formattedData = apiData?.data?.sessions || [];
+
+                // Conversion des jours en lettres
+                formattedData = formattedData.map((session) => ({
+                    ...session,
+                    jday: convertDayToLetter(session.day), // Ajout de jday
+                }));
+                // Ajout d'un élément au début et à la fin
+                formattedData = [
+                    { day: 0, sessionLength: 0, jday: 0 }, // Ajouter au début
+                    ...formattedData,
+                    { day: "", sessionLength: 0, jday: "" }, // Ajouter à la fin
+                ];
 
                 return (
                     <>
-                        {/* <SessionLengthTitle /> */}
+                        <SessionLengthTitle />
                         <ResponsiveContainer width="100%" height="100%">
                             <LineChart
-                                width={600}
-                                height={320}
                                 data={formattedData}
                                 margin={{
-                                    top: 65,
-                                    right: 30,
-                                    left: 43,
+                                    top: 90,
+                                    right: -7,
+                                    left: -7,
                                     bottom: 32,
                                 }}
                             >
                                 <CartesianGrid
                                     stroke="#DEDEDE"
-                                    strokeDasharray="3 3"
+                                    // strokeDasharray="9 9"
+                                    horizontal={false}
                                     vertical={false}
                                     strokeWidth={0.75}
                                 />
                                 <XAxis
-                                    dataKey="index"
+                                    dataKey="jday"
                                     tickLine={false}
                                     stroke="#DEDEDE"
-                                    // interval={0}
-                                    // strokeWidth={1.25}
-                                    // tick={<CustomXAxisTick />}
-                                    // padding={{ left: -49, right: -47 }}
-                                />
-                                <YAxis
-                                    // domain={[minKg, maxKg]}
-                                    dataKey="day"
-                                    yAxisId="right"
-                                    orientation="right"
-                                    tickLine={false}
-                                    // tick={<CustomYAxisTick />}
-                                    // axisLine={false}
-                                    // interval={1}
+                                    scale="point"
+                                    type={"category"}
+                                    interval={0}
+                                    padding={{ left: -10, right: -10 }}
+                                    tick={<CustomXAxisTick />}
+                                    axisLine={false}
                                 />
                                 <YAxis
                                     dataKey="sessionLength"
-                                    yAxisId="left"
-                                    orientation="left"
                                     tickLine={false}
-                                    tickFormatter={(value) =>
-                                        `${(value / 1000).toFixed(1)} kCal`
-                                    }
                                     hide
                                 />
                                 <Tooltip
-                                    cursor={{ fill: "#c4c4c4", opacity: "0.5" }}
+                                    position="relative"
+                                    style={{ position: "relative" }}
+                                    cursor={<CustomCursor width={40} />}
+                                    offset={50}
+                                    dot
                                     content={({ active, payload }) => {
                                         if (
                                             active &&
@@ -94,27 +106,15 @@ const SessionLength = () => {
                                         ) {
                                             return (
                                                 <div className="tooltip-weekly_activity">
-                                                    <div className="grid grid-cols-2 gap-2">
-                                                        <div>
-                                                            <span>
-                                                                {
-                                                                    payload[0]
-                                                                        .payload
-                                                                        .kilogram
-                                                                }
-                                                            </span>{" "}
-                                                            <span>Kg</span>
-                                                        </div>
-                                                        <div>
-                                                            <span>
-                                                                {
-                                                                    payload[0]
-                                                                        .payload
-                                                                        .calories
-                                                                }
-                                                            </span>{" "}
-                                                            <span>Kcal</span>
-                                                        </div>
+                                                    <div>
+                                                        <span>
+                                                            {
+                                                                payload[0]
+                                                                    .payload
+                                                                    .sessionLength
+                                                            }
+                                                        </span>{" "}
+                                                        <span>min</span>
                                                     </div>
                                                 </div>
                                             );
@@ -122,31 +122,34 @@ const SessionLength = () => {
                                         return null;
                                     }}
                                 />
-                                <Legend
-                                    layout="horizontal"
-                                    verticalAlign="top"
-                                    align="right"
-                                    iconType="circle"
-                                    iconSize={8}
-                                    wrapperStyle={{
-                                        top: 15,
-                                        right: 6,
-                                        zIndex: "1000",
-                                        borderRadius: "10px",
-                                        padding: "10px",
-                                        lineHeight: "24px",
-                                        fontSize: "14px",
-                                        fontFamily: "Roboto, sans-serif",
-                                    }}
-                                />
                                 <Line
                                     dataKey="sessionLength"
-                                    fill="#282d30"
-                                    barSize={8}
-                                    yAxisId="right"
-                                    name="Poids (kg)"
-                                    shape={<CustomBarShape />}
+                                    stroke="url(#lineGradient)"
+                                    fill="url(#lineGradient)"
+                                    strokeWidth={2}
+                                    type="monotone"
+                                    dot={false}
                                 />
+                                <defs>
+                                    <linearGradient
+                                        id="lineGradient"
+                                        x1="1"
+                                        y1="0"
+                                        x2="0"
+                                        y2="1"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stopColor="#FFF"
+                                            stopOpacity={1}
+                                        />
+                                        <stop
+                                            offset="100%"
+                                            stopColor="rgba(255, 255, 255, 0.11)"
+                                            stopOpacity={0.403191}
+                                        />
+                                    </linearGradient>
+                                </defs>
                             </LineChart>
                         </ResponsiveContainer>
                     </>

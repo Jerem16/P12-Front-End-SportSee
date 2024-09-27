@@ -55,6 +55,15 @@
     font-weight: 500;
 }
 
+@mixin tooltip-legend() {
+    @include font-base();
+    color: $text-white;
+    text-align: center;
+    font-size: 7px;
+    font-style: normal;
+    font-weight: 500;
+}
+
 //? Section Resume Activity */
 //* F-1 */
 

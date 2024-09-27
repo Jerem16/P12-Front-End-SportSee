@@ -1,5 +1,6 @@
 import React from "react";
 import SessionLength from "./SessionLength/SessionLength";
+import PerformanceCharts from "./Performance/PerformanceCharts";
 
 const ResumeActivity = () => {
     return (
@@ -7,8 +8,8 @@ const ResumeActivity = () => {
             <div className="charts-frame session">
                 <SessionLength />
             </div>
-            <div className="charts-frame session">
-                <SessionLength />
+            <div className="charts-frame performance">
+                <PerformanceCharts />
             </div>
             <div className="charts-frame session">
                 <SessionLength />

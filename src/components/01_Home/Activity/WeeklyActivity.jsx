@@ -28,7 +28,7 @@ const WeeklyActivity = () => {
             path={path}
             userId={userId}
             endPoint={endPoint}
-            useMockData={true}
+            // useMockData={true}
             dataMocked={dataMocked}
         >
             {(apiData) => {
@@ -104,7 +104,7 @@ const WeeklyActivity = () => {
                                         ) {
                                             return (
                                                 <div className="tooltip-weekly_activity">
-                                                    <div className="grid grid-cols-2 gap-2">
+                                                    <div>
                                                         <div>
                                                             <span>
                                                                 {
@@ -141,7 +141,6 @@ const WeeklyActivity = () => {
                                     wrapperStyle={{
                                         top: 15,
                                         right: 6,
-                                        zIndex: "1000",
                                         borderRadius: "10px",
                                         padding: "10px",
                                         lineHeight: "24px",

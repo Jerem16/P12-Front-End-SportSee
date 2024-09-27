@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const SessionLengthTitle = (props) => {
-    return <h2 className="weekly_activity-title">Activité quotidienne</h2>;
+    return (
+        <h3 className="session-length-title">Durée moyenne des sessions</h3>
+    );
 };
 
 SessionLengthTitle.propTypes = {};

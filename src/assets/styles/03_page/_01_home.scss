@@ -41,14 +41,6 @@
                 margin: 10px 32px;
                 position: absolute;
                 top: 15.5px;
-                z-index: 1000;
-                width: calc(100% - 94px);
-                // height: 81px;
-                // border: 1px solid #000;
-                background: $sda-bg-color;
-                // background: #000;
-                // z-index: 1000 !important;
-                // color: rebeccapurple;
             }
             .tooltip-weekly_activity {
                 display: flex;
@@ -58,13 +50,7 @@
                 width: 39px;
                 height: 63px;
                 background: $nav-title-red;
-                color: $text-white;
-                text-align: center;
-                font-family: $font-roboto;
-                font-size: 7px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 24px;
+                @include tooltip-legend();
             }
         }
         .weekly_resume-activity {
@@ -73,7 +59,6 @@
             display: flex;
             justify-content: space-between;
 
-            // display: none;
             .charts-frame {
                 width: 258px;
                 height: 263px;
@@ -82,6 +67,28 @@
             }
             .session {
                 background: $shp-text-red-h1;
+            }
+            .performance {
+                background: $sda-graph-bar_1;
+            }
+            .tooltip-weekly_activity {
+                display: flex;
+                flex-flow: column wrap;
+                margin: 0 auto;
+                justify-content: center;
+                width: 39px;
+                height: 25px;
+                background: $text-white;
+                @include tooltip-legend();
+                color: $nav-bg-black;
+            }
+            h3.session-length-title {
+                @include weekly_activity-title();
+                position: absolute;
+                color: $text-white;
+                width: 147px;
+                margin: 29px 34px;
+                opacity: 0.5;
             }
         }
     }
