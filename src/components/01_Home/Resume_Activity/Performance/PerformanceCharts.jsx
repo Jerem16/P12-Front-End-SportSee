@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import FetchData from "../../../../utils/FetchData";
 import dataMocked from "../../../../assets/data/performance.json";
+import dataKindFR from "../../../../assets/data/kind-FR.json";
 import {
     RadarChart,
     PolarGrid,
@@ -10,18 +11,19 @@ import {
     RadialBar,
     ResponsiveContainer,
 } from "recharts";
+import { UserContext } from "../../../../utils/UserContext";
 
 const PerformanceCharts = () => {
-    const path = "http://localhost:3000";
-    const userId = 12;
+    const path = process.env.REACT_APP_API_URL;
+    // const { userId, useMockData } = useContext(UserContext);
     const endPoint = "performance";
 
     return (
         <FetchData
             path={path}
-            userId={userId}
+            // userId={userId}
             endPoint={endPoint}
-            useMockData={true}
+            // useMockData={useMockData}
             dataMocked={dataMocked}
         >
             {(apiData) => {
@@ -41,7 +43,7 @@ const PerformanceCharts = () => {
                 const newData = formattedData.data;
                 console.log("newData", newData);
 
-                const kindData = formattedData.kind;
+                const kindData = dataKindFR.kind;
                 console.log("kindData", kindData);
 
                 // Ajout de 'subject' pour chaque entrée dans 'formattedData'
@@ -57,7 +59,7 @@ const PerformanceCharts = () => {
                         <RadarChart
                             cx="50%"
                             cy="50%"
-                            outerRadius={85}
+                            outerRadius={88}
                             startAngle={90}
                             data={formattedNewData.reverse()}
                         >

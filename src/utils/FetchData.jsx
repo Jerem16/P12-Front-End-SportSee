@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react"; // Ajoute useContext ici
 import { Loading } from "../components/Loader/Loader";
+import { UserContext } from "./UserContext";
 
-const FetchData = ({
-    path,
-    userId,
-    endPoint,
-    dataMocked,
-    useMockData = false,
-    children,
-}) => {
+const FetchData = ({ path, endPoint, dataMocked, children }) => {
     const [isDataLoading, setDataLoading] = useState(false);
     const [error, setError] = useState(null);
     const [apiData, setApiData] = useState(null);
+
+    // Récupère userId et useMockData depuis le contexte
+    const { userId, useMockData } = useContext(UserContext);
 
     useEffect(() => {
         async function getData() {
@@ -23,6 +20,9 @@ const FetchData = ({
                     const response = await fetch(
                         `${path}/user/${userId}/${endPoint}`
                     );
+                    if (!response.ok) {
+                        throw new Error(`Erreur HTTP : ${response.status}`);
+                    }
                     const data = await response.json();
                     setApiData(data);
                 }
@@ -32,8 +32,9 @@ const FetchData = ({
                 setDataLoading(false);
             }
         }
+
         getData();
-    }, [path, userId, endPoint, useMockData, dataMocked]);
+    }, [path, userId, endPoint, useMockData, dataMocked]); // Vérifie que toutes les dépendances nécessaires sont ici
 
     if (error) {
         return <div>Une erreur est survenue : {error.message}</div>;

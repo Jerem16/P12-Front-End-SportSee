@@ -1,18 +1,19 @@
 import React from "react";
-import SessionLength from "./SessionLength/SessionLength";
+import SessionLengthCharts from "./SessionLength/SessionLengthCharts";
 import PerformanceCharts from "./Performance/PerformanceCharts";
+import ScoreCharts from "./Score/ScoreCharts";
 
 const ResumeActivity = () => {
     return (
         <>
             <div className="charts-frame session">
-                <SessionLength />
+                <SessionLengthCharts />
             </div>
             <div className="charts-frame performance">
                 <PerformanceCharts />
             </div>
-            <div className="charts-frame session">
-                <SessionLength />
+            <div className="charts-frame score">
+                <ScoreCharts />
             </div>
         </>
     );

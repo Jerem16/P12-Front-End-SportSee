@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useContext } from "react";
 import WeeklyActivityTitle from "./WeeklyActivityTitle";
 import FetchData from "../../../utils/FetchData";
 import dataMocked from "../../../assets/data/activity.json";
+import { UserContext } from "../../../utils/UserContext";
 import {
     BarChart,
     Bar,
@@ -18,17 +19,17 @@ import {
     CustomYAxisTick,
 } from "./CustomShapes";
 
-const WeeklyActivity = () => {
-    const path = "http://localhost:3000";
-    const userId = 12;
+const WeeklyActivityCharts = () => {
+    const path = process.env.REACT_APP_API_URL;
+    // const { userId, useMockData } = useContext(UserContext);
     const endPoint = "activity";
 
     return (
         <FetchData
             path={path}
-            userId={userId}
+            // userId={userId}
             endPoint={endPoint}
-            // useMockData={true}
+            // useMockData={useMockData}
             dataMocked={dataMocked}
         >
             {(apiData) => {
@@ -49,8 +50,9 @@ const WeeklyActivity = () => {
                         <WeeklyActivityTitle />
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart
-                                width={600}
-                                height={320}
+                                // width={600}
+                                // height={320}
+                                fill="#000"
                                 data={formattedData}
                                 margin={{
                                     top: 65,
@@ -173,4 +175,4 @@ const WeeklyActivity = () => {
     );
 };
 
-export default WeeklyActivity;
+export default WeeklyActivityCharts;

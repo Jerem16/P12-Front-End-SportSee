@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Hello from "./Hello";
-import WeeklyActivity from "./Activity/WeeklyActivity";
+import WeeklyActivityCharts from "./Activity/WeeklyActivityCharts";
 import ResumeActivity from "./Resume_Activity/ResumeActivity";
 
 /**
@@ -15,7 +15,7 @@ const Home = () => {
             <div className="dashboard-overview">
                 <div className="activity-summary">
                     <section className="weekly_activity">
-                        <WeeklyActivity />
+                        <WeeklyActivityCharts />
                     </section>
                     <section className="weekly_resume-activity">
                         <ResumeActivity />

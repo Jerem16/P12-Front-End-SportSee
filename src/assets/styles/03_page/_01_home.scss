@@ -11,22 +11,32 @@
         margin-bottom: 77px;
     }
 }
-
 .dashboard-overview {
     width: 100%;
-    height: 610px;
-    // background: green;
+    // height: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
+    gap: 32px;
+    margin-left: 18px;
+
     .activity-summary {
-        width: 835px;
+        min-width: 835px;
+        width: 100%;
         height: 610px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        section {
+            margin: 0 auto;
+        }
         .weekly_activity,
         .weekly_resume-activity {
             width: 835px;
+            width: 100%;
             border-radius: 5px;
-            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+            // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
         }
         .weekly_activity {
             // display: none;
@@ -55,21 +65,30 @@
         }
         .weekly_resume-activity {
             height: 263px;
-            background: green;
+            // background: green;
             display: flex;
             justify-content: space-between;
+            gap: 30px;
 
             .charts-frame {
                 width: 258px;
+                width: 100%;
                 height: 263px;
                 border-radius: 5px;
                 box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+                position: relative;
             }
             .session {
                 background: $shp-text-red-h1;
             }
             .performance {
                 background: $sda-graph-bar_1;
+            }
+            .score {
+                background: #fbfbfb;
+                display: flex;
+                flex-flow: column;
+                // justify-content: center;
             }
             .tooltip-weekly_activity {
                 display: flex;
@@ -90,12 +109,59 @@
                 margin: 29px 34px;
                 opacity: 0.5;
             }
+            h3.score-title {
+                @include weekly_activity-title();
+                position: absolute;
+                color: $sda-graph-bar_1;
+                width: 147px;
+                margin: 25px 30px;
+            }
+            p.resume {
+                @include sra-f3-percentage();
+                position: absolute;
+                top: 108px;
+                top: calc(100% - 86px * 2);
+                display: flex;
+                flex-flow: column;
+                align-self: center;
+                width: 95px;
+                height: 89px;
+                text-align: center;
+
+                // border: 1px solid #000;
+                span {
+                    @include sra-f3-grey();
+                    width: 95px;
+                    margin: 4px 0px;
+                }
+            }
         }
     }
 
     .daily_consumption {
-        width: 258px;
+        min-width: 258px;
+        width: 100%;
         height: 613px;
         background: $sda-bg-color;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        // margin-left: 0px;
+    }
+
+    @media (max-width: 1439px) {
+        flex-flow: column; // Passe les éléments en colonne
+        .activity-summary,
+        .daily_consumption {
+            width: 100%; // Assure-toi qu'ils prennent 100% de la largeur
+        }
+    }
+    .daily_consumption {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 0px;
     }
 }

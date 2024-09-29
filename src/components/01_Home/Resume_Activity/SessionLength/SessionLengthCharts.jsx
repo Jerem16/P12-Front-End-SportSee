@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import FetchData from "../../../../utils/FetchData";
 import dataMocked from "../../../../assets/data/sessions.json";
 import SessionLengthTitle from "./SessionLengthTitle";
-import { CustomXAxisTick, CustomCursor } from "./CustomShapes";
+import { CustomXAxisTick, CustomCursor, CustomActiveDot } from "./CustomShapes";
 import {
     LineChart,
     Line,
@@ -12,10 +12,11 @@ import {
     Tooltip,
     ResponsiveContainer,
 } from "recharts";
+import { UserContext } from "../../../../utils/UserContext";
 
-const SessionLength = () => {
-    const path = "http://localhost:3000";
-    const userId = 12;
+const SessionLengthCharts = () => {
+    const path = process.env.REACT_APP_API_URL;
+    // const { userId, useMockData } = useContext(UserContext);
     const endPoint = "average-sessions";
 
     // Fonction pour convertir les jours en abréviations
@@ -35,9 +36,9 @@ const SessionLength = () => {
     return (
         <FetchData
             path={path}
-            userId={userId}
+            // userId={userId}
             endPoint={endPoint}
-            useMockData={true}
+            // useMockData={useMockData}
             dataMocked={dataMocked}
         >
             {(apiData) => {
@@ -97,7 +98,9 @@ const SessionLength = () => {
                                     style={{ position: "relative" }}
                                     cursor={<CustomCursor width={40} />}
                                     offset={50}
-                                    dot
+                                    dot={false}
+                                    // activeDot={<CustomActiveDot />}
+                                    // cursor={<CustomCursor width={40} />}
                                     content={({ active, payload }) => {
                                         if (
                                             active &&
@@ -128,7 +131,8 @@ const SessionLength = () => {
                                     fill="url(#lineGradient)"
                                     strokeWidth={2}
                                     type="monotone"
-                                    dot={false}
+                                    dot={false} // Désactive les dots réguliers
+                                    activeDot={<CustomActiveDot />} // Utilise le dot personnalisé
                                 />
                                 <defs>
                                     <linearGradient
@@ -159,4 +163,4 @@ const SessionLength = () => {
     );
 };
 
-export default SessionLength;
+export default SessionLengthCharts;

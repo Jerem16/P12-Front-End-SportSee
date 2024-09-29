@@ -60,7 +60,18 @@ Le projet inclut l'intégration de graphiques et de diagrammes interactifs pour 
 
     git clone https://github.com/OpenClassrooms-Student-Center/SportSee
 
-Suivez les indications dans le README du projet backend.
+    Suivez les indications dans le README du projet backend.
+
+    ### 4.2 Examples of queries
+
+-   `http://localhost:8080/user/12` - Retrieves the performance of the user with id 12
+-   `http://localhost:8080/user/12/activity` - Retrieves the activity of the user with id 12
+-   `http://localhost:8080/user/12/average-sessions` - Retrieves the average-sessions of the user with id 12
+-   `http://localhost:8080/user/12/performance` - Retrieves the performance of the user with id 12
+-   `http://localhost:8080/user/18` - Retrieves user 18's main information.
+-   `http://localhost:8080/user/18/activity` - Retrieves the activity of the user with id 18
+-   `http://localhost:8080/user/18/average-sessions` - Retrieves the average-sessions of the user with id 18
+-   `http://localhost:8080/user/18/performance` - Retrieves the performance of the user with id 18
 
 ### étape 2 - Lancer le frontend :
 
