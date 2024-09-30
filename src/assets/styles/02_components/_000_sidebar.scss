@@ -38,6 +38,19 @@
             .white-bg_icon {
                 fill: $text-white;
             }
+            &:hover {
+                box-shadow: 4px 4px 4px 0px rgba(255, 1, 1, 0.25);
+                position: relative;
+                transform: scale(1.05);
+                transition: all 0.3s ease-in-out;
+                .red-content_icon {
+                    fill: #282d30;
+  
+                }
+                .white-bg_icon {
+                    fill: #ff0101;
+                }
+            }
         }
     }
     .copyright {

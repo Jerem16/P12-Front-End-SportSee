@@ -11,7 +11,9 @@ import ResumeActivity from "./Resume_Activity/ResumeActivity";
 const Home = () => {
     return (
         <main>
-            <Hello />
+            <section className="section-hello">
+                <Hello />{" "}
+            </section>
             <div className="dashboard-overview">
                 <div className="activity-summary">
                     <section className="weekly_activity">

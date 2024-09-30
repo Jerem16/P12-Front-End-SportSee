@@ -30,7 +30,7 @@ const Hello = () => {
                 console.log(firstName);
 
                 return (
-                    <section className="section-hello">
+                    <>
                         <h2 className="hello">
                             Bonjour <span className="name">{firstName}</span>
                         </h2>
@@ -38,7 +38,7 @@ const Hello = () => {
                             Félicitation ! Vous avez explosé vos objectifs hier
                             👏
                         </p>
-                    </section>
+                    </>
                 );
             }}
         </FetchData>

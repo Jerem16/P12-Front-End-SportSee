@@ -8,8 +8,12 @@
     }
     .support {
         @include sda-support();
-        margin-bottom: 77px;
     }
+    height: 90px;
+    margin-bottom: 77px;
+    width: 838px;
+    // border: 1px solid #000;
+    // background: #000;
 }
 .dashboard-overview {
     width: 100%;

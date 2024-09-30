@@ -52,6 +52,23 @@
             padding-left: 10px;
             letter-spacing: 1.35px;
         }
+        &:hover {
+            // box-shadow: 4px 4px 4px 0px rgba(255, 1, 1, 0.25);
+
+            .my-logo {
+                position: relative;
+                transform: scale(1.05);
+                transition: all 0.3s ease-in-out;
+                .red-bg_icon {
+                    // fill: $text-white;
+                    // fill: orangered;
+                }
+            }
+            .nav-title {
+                // color: $text-white;
+                // color: orangered;
+            }
+        }
     }
     .link-group {
         width: 100%;
