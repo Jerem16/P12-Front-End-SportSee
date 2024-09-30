@@ -87,22 +87,23 @@
 
         &:active {
             .my-logo {
-                transition: none;
                 background-color: #fff;
+                transform: scale(1);
+                transition: all 0.3s ease-in-out;
             }
-
+            .red-bg_icon {
+                fill: #fff;
+                opacity: 1;
+                animation: none;
+            }
             .typo-logo {
+                transform: scale(1);
+                transition: all 0.3s ease-in-out;
                 margin-left: 70px;
                 box-shadow: inset 2px 2px 2px rgba(40, 45, 48, 0.35);
 
                 .black-content_icon {
                     @include drop-shadow(1px 1px rgba(40, 45, 48, 0.35));
-                }
-
-                .red-bg_icon {
-                    fill: #fff;
-                    opacity: 1;
-                    animation: none;
                 }
             }
         }

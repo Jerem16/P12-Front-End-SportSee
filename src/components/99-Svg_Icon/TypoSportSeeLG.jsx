@@ -15,13 +15,6 @@ const TypoSportSeeLG = () => {
                 xmlSpace="preserve"
             >
                 <rect
-                    className="red-bg_icon"
-                    x="0.7"
-                    y="0.3"
-                    width="108.95"
-                    height="24"
-                />
-                <rect
                     x="0.5"
                     y="0.5"
                     className="red-bg_icon"
