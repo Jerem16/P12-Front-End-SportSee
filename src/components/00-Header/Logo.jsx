@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SportSeeLG from "../99-Svg_Icon/SportSeeLG";
+import TypoSportSeeLG from "../99-Svg_Icon/TypoSportSeeLG";
 import PropTypes from "prop-types";
 
 /**
@@ -15,6 +16,7 @@ const Logo = ({ h1 = "SportSee" }) => {
     return (
         <Link className="logo" to="/" title="Aller à la page d'accueil">
             <SportSeeLG />
+            <TypoSportSeeLG />
             <h1 className="nav-title">{h1}</h1>
         </Link>
     );

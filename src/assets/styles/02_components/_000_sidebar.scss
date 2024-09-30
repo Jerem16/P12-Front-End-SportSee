@@ -32,6 +32,8 @@
             width: 64px;
             height: 64px;
             margin-bottom: 20px;
+            border-radius: 7px;
+            background-color: #ff0101;
             .red-content_icon {
                 fill: #ff0101;
             }
@@ -39,16 +41,78 @@
                 fill: $text-white;
             }
             &:hover {
-                box-shadow: 4px 4px 4px 0px rgba(255, 1, 1, 0.25);
+                box-shadow: 2px 2px 2px 0px rgba(255, 1, 1, 0.25);
                 position: relative;
-                transform: scale(1.05);
-                transition: all 0.3s ease-in-out;
+                transform: scale(1.03);
+                transition: all 0.275s ease-in-out;
+                background-color: #282d30;
+
                 .red-content_icon {
+                    animation: sport-icon 0.45s linear;
                     fill: #282d30;
-  
+                    opacity: 0;
                 }
                 .white-bg_icon {
                     fill: #ff0101;
+                    @include drop-shadow(1.5px 1.5px rgba(0, 0, 0, 1));
+                }
+            }
+            &:active {
+                box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.35);
+                // box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 1, 10.25);
+                // box-shadow: inset 2px 2px gold;
+                position: relative;
+                transform: scale(1);
+                transition: none;
+                background-color: #ff0101;
+
+                .red-content_icon {
+                    animation: sport-icon-V2 0.3s linear;
+                    fill: #fff;
+                    @include drop-shadow(1px 1px rgba(0, 0, 0, 0.35));
+                    // fill: #ff0101;
+                    opacity: 1;
+                }
+                .white-bg_icon {
+                    // animation: sport-icon 1s linear;
+                    fill: #ff0101;
+                    fill: blue;
+                    opacity: 0;
+                    // box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 1, 10.25);
+                    box-shadow: inset 5px 5px gold;
+                }
+            }
+            @keyframes sport-icon {
+                from {
+                    fill: #282d30;
+                    opacity: 1;
+                }
+
+                to {
+                    fill: transparent;
+                    opacity: 0;
+                }
+            }
+            @keyframes typo-logo {
+                from {
+                    fill: #ff0101;
+                    opacity: 1;
+                }
+
+                to {
+                    fill: transparent;
+                    opacity: 0;
+                }
+            }
+            @keyframes sport-icon-V2 {
+                from {
+                    fill: #282d30;
+                    opacity: 1;
+                }
+
+                to {
+                    fill: #fff;
+                    opacity: 1;
                 }
             }
         }
