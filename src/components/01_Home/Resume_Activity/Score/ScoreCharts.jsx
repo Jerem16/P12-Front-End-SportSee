@@ -3,7 +3,8 @@ import ScoreTitle from "./ScoreTitle";
 import FetchData from "../../../../utils/FetchData";
 import dataMocked from "../../../../assets/data/user.json";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import { UserContext } from "../../../../utils/UserContext";
+import ScoreDisplay from "./ScoreDisplay";
+
 const ScoreCharts = () => {
     const path = process.env.REACT_APP_API_URL;
     // const { userId, useMockData } = useContext(UserContext);
@@ -62,10 +63,13 @@ const ScoreCharts = () => {
                                 </Pie>
                             </PieChart>
                         </ResponsiveContainer>
-                        <p className="resume">
-                            {formattedData[0].value}%{" "}
-                            <span>de votre objectif</span>
-                        </p>
+                        <ScoreDisplay
+                            finalValue={formattedData[0].value}
+                            goalText="de votre objectif"
+                            delayIncrement={50}
+                            incrementFactor={100}
+                            durationBeforeStart={200}
+                        />
                     </>
                 );
             }}

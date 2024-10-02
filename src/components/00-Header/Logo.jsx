@@ -17,6 +17,9 @@ const Logo = ({ h1 = "SportSee" }) => {
         <Link className="logo" to="/" title="Aller à la page d'accueil">
             <SportSeeLG />
             <TypoSportSeeLG />
+            <span className="hover-line p1"></span>
+            <span className="hover-line p2"></span>
+            <span className="hover-line p3"></span>
             <h1 className="nav-title">{h1}</h1>
         </Link>
     );

@@ -38,13 +38,13 @@ const PerformanceCharts = () => {
                 }
 
                 let formattedData = apiData.data;
-                console.log("formattedData", formattedData);
+                // console.log("formattedData", formattedData);
 
                 const newData = formattedData.data;
-                console.log("newData", newData);
+                // console.log("newData", newData);
 
                 const kindData = dataKindFR.kind;
-                console.log("kindData", kindData);
+                // console.log("kindData", kindData);
 
                 // Ajout de 'subject' pour chaque entrée dans 'formattedData'
                 const formattedNewData = newData.map((item) => ({
@@ -52,7 +52,7 @@ const PerformanceCharts = () => {
                     subject: kindData[item.kind], // Assignation du bon nom de sujet
                 }));
 
-                console.log("formattedNewData", formattedNewData);
+                // console.log("formattedNewData", formattedNewData);
 
                 return (
                     <ResponsiveContainer width="100%" height="100%">

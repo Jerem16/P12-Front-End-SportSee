@@ -1,7 +1,6 @@
 import React from "react";
 
-
-const Loader = () => {
+export const Loader = () => {
     return (
         <div className="loader-wrapper">
             <Loading />
@@ -9,11 +8,8 @@ const Loader = () => {
     );
 };
 
-export default React.memo(Loader);
+// export default React.memo(Loader);
 
 export const Loading = () => {
-    return (
-        <div className="loading">
-        </div>
-    );
+    return <div className="loading"></div>;
 };

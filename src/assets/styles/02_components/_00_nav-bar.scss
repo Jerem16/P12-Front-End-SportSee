@@ -26,28 +26,35 @@
         height: 85px;
         display: inline-flex;
         align-items: center;
-        // margin-right: 10px;
         padding-right: 40px;
-        // border: 1px solid #fff;
         box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
         background-color: $nav-bg-black;
         position: relative;
         z-index: 102;
-
-        .my-logo {
+        .my-logo,
+        .typo-logo {
             position: absolute;
+            box-sizing: border-box;
+            background-color: $shp-text-red-h1;
+        }
+        .my-logo {
             max-width: 58px;
             max-height: 58px;
-            background-color: $shp-text-red-h1;
             border-radius: 50%;
         }
         .typo-logo {
-            position: absolute;
-            background-color: $nav-bg-black;
             margin-left: 68px;
             margin-top: 2px;
             width: 110px;
             height: 25px;
+            background-color: $nav-bg-black;
+            .black-content_icon {
+                @include drop-shadow(1px 1px rgba(0, 0, 0, 0));
+            }
+            .red-bg_icon {
+                fill: $shp-text-red-h1;
+                // fill: blue;
+            }
         }
         .red-bg_icon {
             fill: $shp-text-red-h1;
@@ -56,55 +63,97 @@
         .black-content_icon {
             fill: $nav-bg-black;
         }
+        .hover-line {
+            // width: 86px;
+            height: 5px;
+            // transition: all 1s ease-in-out;
 
+            // border-bottom: 2px solid $shp-text-red-h1;
+            // margin-left: 68px;
+            position: absolute;
+            z-index: 100;
+            top: 51px;
+            display: none;
+        }
+        .p1 {
+            width: 12px;
+            margin-left: 68px;
+            animation: showLine 0.3s ease-in-out;
+            // transform: scaleX(1);
+            // left: 0;
+        }
+        .p2 {
+            width: 12px;
+            animation: showLine 0.3s ease-in-out;
+            // transform: scaleX(1);
+            margin-left: 80px;
+            border-bottom: 2px solid $nav-bg-black;
+            left: 0;
+            // border-bottom: 2px solid green;
+        }
+        .p3 {
+            max-width: 86px;
+            width: 100%;
+            animation: showLine 0.3s ease-in-out;
+            left: 0;
+            // transform: scaleX(1);
+            margin-left: 92px;
+        }
         .nav-title {
             @include nav-title;
-            color: #000;
+            color: $nav-bg-black;
             padding-left: 68px;
             letter-spacing: 1.35px;
         }
+        @keyframes showLine {
+            from {
+                width: 0;
+                // transform: scaleX(0);
+            }
 
+            to {
+                width: 100%;
+                // max-width: 86px;
+                // transform: scaleX(1);
+            }
+        }
         &:hover {
             .my-logo {
-                box-shadow: inset 2px 2px 2px rgba(40, 45, 48, 0.35);
-                transform: scale(1.03);
-                transition: all 0.3s ease-in-out;
+                box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
                 .red-bg_icon {
                     fill: transparent;
                 }
                 .black-content_icon {
-                    @include drop-shadow(2px 2px rgba(40, 45, 48, 0.35));
+                    @include drop-shadow(2px 2px rgba(0, 0, 0, 0.25));
                 }
             }
-
             .typo-logo {
-                margin-left: 70px;
-                transform: scale(1.03);
-                transition: all 0.3s ease-in-out;
-                box-shadow: inset 2px 2px 2px rgba(40, 45, 48, 0.35);
+                box-shadow: inset 1px 1px 1px rgba(40, 45, 48, 0.05);
+                background-color: $shp-text-red-h1;
+                .black-content_icon {
+                    @include drop-shadow(1px 1px rgba(0, 0, 0, 0.25));
+                }
+                .red-bg_icon {
+                    fill: transparent;
+                    // fill: blue;
+                }
+            }
+            .hover-line {
+                display: block;
+            }
+            .p1,
+            .p3 {
+                border-bottom: 2px solid $shp-text-red-h1;
             }
         }
 
         &:active {
-            .my-logo {
+            .my-logo,
+            .typo-logo {
                 background-color: #fff;
-                transform: scale(1);
-                transition: all 0.3s ease-in-out;
             }
             .red-bg_icon {
-                fill: #fff;
-                opacity: 1;
-                animation: none;
-            }
-            .typo-logo {
-                transform: scale(1);
-                transition: all 0.3s ease-in-out;
-                margin-left: 70px;
-                box-shadow: inset 2px 2px 2px rgba(40, 45, 48, 0.35);
-
-                .black-content_icon {
-                    @include drop-shadow(1px 1px rgba(40, 45, 48, 0.35));
-                }
+                fill: transparent;
             }
         }
     }
@@ -172,7 +221,7 @@
                 display: block;
                 position: relative;
                 @include nav-link;
-                // border: 1px solid #000;
+                // border: 1px solid #fff;
                 width: calc(149px);
                 text-align: center;
                 // color: aqua;

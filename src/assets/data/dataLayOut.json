@@ -1,0 +1,36 @@
+{
+    "consumptionData": [
+        {
+            "type": "calorieCount",
+            "unit": "kCal",
+            "image": {
+                "src": "/assets/img/T-Calories.svg",
+                "alt": "icon Calories"
+            }
+        },
+        {
+            "type": "proteinCount",
+            "unit": "g",
+            "image": {
+                "src": "/assets/img/T-Proteines.svg",
+                "alt": "icon Proteines"
+            }
+        },
+        {
+            "type": "carbohydrateCount",
+            "unit": "g",
+            "image": {
+                "src": "/assets/img/T-Glucides.svg",
+                "alt": "icon Glucides"
+            }
+        },
+        {
+            "type": "lipidCount",
+            "unit": "g",
+            "image": {
+                "src": "/assets/img/T-Lipides.svg",
+                "alt": "icon Lipides"
+            }
+        }
+    ]
+}

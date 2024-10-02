@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Hello from "./Hello";
 import WeeklyActivityCharts from "./Activity/WeeklyActivityCharts";
 import ResumeActivity from "./Resume_Activity/ResumeActivity";
+import SectionConsumption from "./Consumption/SectionConsumption";
 
 /**
  * Home component that renders the homepage content.
@@ -23,7 +24,9 @@ const Home = () => {
                         <ResumeActivity />
                     </section>
                 </div>
-                <section className="daily_consumption"></section>
+                <section className="daily_consumption">
+                    <SectionConsumption />
+                </section>
             </div>
         </main>
     );

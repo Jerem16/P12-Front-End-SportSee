@@ -34,6 +34,8 @@
             margin-bottom: 20px;
             border-radius: 7px;
             background-color: #ff0101;
+            box-sizing: border-box;
+            border: 2px solid $nav-bg-black;
             .red-content_icon {
                 fill: #ff0101;
             }
