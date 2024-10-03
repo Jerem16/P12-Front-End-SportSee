@@ -34,6 +34,7 @@
         flex-flow: column nowrap;
         justify-content: space-between;
         align-items: center;
+
         section {
             margin: 0 auto;
         }
@@ -42,12 +43,14 @@
             width: 835px;
             width: 100%;
             border-radius: 5px;
+
             // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
         }
         .weekly_activity {
             // display: none;
             position: relative;
             height: 320px;
+            animation: showChartH 0.5s ease-in-out;
             background: $sda-bg-color;
             margin-bottom: 28px;
             // border: 1px solid #000;
@@ -85,10 +88,16 @@
                 position: relative;
             }
             .session {
+                // animation: showChart 0.5s ease-in-out;
                 background: $shp-text-red-h1;
             }
             .performance {
                 background: $sda-graph-bar_1;
+                .perf-legend {
+                    animation: perfcolor 2.5s ease-in-out;
+                    fill: #fff;
+                    opacity: 1;
+                }
             }
             .score {
                 background: #fbfbfb;
@@ -96,6 +105,10 @@
                 flex-flow: column;
                 // border: 1px solid #000;
                 // justify-content: center;
+            }
+            .show-display {
+                // opacity: 1;
+                animation: showChart 0.5s ease-in-out;
             }
             .tooltip-weekly_activity {
                 display: flex;
@@ -142,6 +155,62 @@
                     margin: 4px 0px;
                 }
             }
+            @keyframes showChartH {
+                from {
+                    // background: $sda-graph-bar_1;
+                    height: 0;
+                    opacity: 0;
+                    // transform: scaleX(0);
+                }
+
+                to {
+                    height: 320px;
+                    opacity: 1;
+                    // background: $shp-text-red-h1;
+                    // max-width: 86px;
+                    // transform: scaleX(1);
+                }
+            }
+            @keyframes perfcolor {
+                from {
+                    // background: white;
+                    // fill: #fff;
+                    fill: $sda-graph-bar_1;
+                    // height: 0;
+                    opacity: 0;
+                    // transform: scaleX(0);
+                }
+                25% {
+                    fill: $sda-graph-bar_1;
+                }
+
+                to {
+                    // height: 320px;
+                    opacity: 1;
+                    // background: white;
+
+                    // max-width: 86px;
+                    // transform: scaleX(1);
+                }
+            }
+            @keyframes showChart {
+                from {
+                    // background: $sda-graph-bar_1;
+                    background-color: white;
+
+                    width: 0;
+                    opacity: 0;
+                    // transform: scaleX(0);
+                }
+
+                to {
+                    width: 100%;
+                    opacity: 1;
+                    // background: $shp-text-red-h1;
+                    // max-width: 86px;
+                    // transform: scaleX(1);
+                }
+            }
             @keyframes showDisplay {
                 from {
                     opacity: 0;
@@ -175,6 +244,7 @@
         justify-content: space-between;
         align-content: space-between;
         margin: 0;
+        animation: showDisplay 0.15s ease-in-out;
 
         .detail {
             border-radius: 5px;
@@ -189,15 +259,16 @@
             justify-content: space-between;
             align-items: center;
             padding: 32px;
+
             // flex-flow: row wrap;
             .img_consumption {
                 width: 60px;
                 height: 60px;
                 // background: #000;
-                animation: showDisplay 1s ease-in-out;
+                animation: showDisplay 0.35s ease-in-out;
             }
             .info_consumption {
-                animation: showDisplay 1s ease-in-out;
+                animation: showDisplay 0.75s ease-in-out;
                 width: 110px;
                 height: 60px;
                 margin-top: 10px;

@@ -3,6 +3,7 @@ import WeeklyActivityTitle from "./WeeklyActivityTitle";
 import FetchData from "../../../utils/FetchData";
 import dataMocked from "../../../assets/data/activity.json";
 import { UserContext } from "../../../utils/UserContext";
+import { fetchActivities } from "../../../utils/apiEndpoints";
 import {
     BarChart,
     Bar,
@@ -21,24 +22,21 @@ import {
 
 const WeeklyActivityCharts = () => {
     const path = process.env.REACT_APP_API_URL;
-    // const { userId, useMockData } = useContext(UserContext);
     const endPoint = "activity";
 
     return (
-        <FetchData
-            path={path}
-            // userId={userId}
-            endPoint={endPoint}
-            // useMockData={useMockData}
-            dataMocked={dataMocked}
-        >
+        <FetchData path={path} endPoint={endPoint} dataMocked={dataMocked}>
             {(apiData) => {
-                const formattedData = (apiData?.data?.activities || []).map(
-                    (item, index) => ({
-                        ...item,
-                        index: index + 1,
-                    })
-                );
+                // Appelle la fonction pour obtenir les données des activités
+                const activities = fetchActivities(apiData);
+
+                // Vérifie que les données des activités existent avant de les formater
+                const formattedData = Array.isArray(activities)
+                    ? activities.map((item, index) => ({
+                          ...item,
+                          index: index + 1,
+                      }))
+                    : [];
 
                 const minKg =
                     Math.min(...formattedData.map((d) => d.kilogram)) - 1;
@@ -50,8 +48,6 @@ const WeeklyActivityCharts = () => {
                         <WeeklyActivityTitle />
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart
-                                // width={600}
-                                // height={320}
                                 fill="#000"
                                 data={formattedData}
                                 margin={{
@@ -176,3 +172,4 @@ const WeeklyActivityCharts = () => {
 };
 
 export default WeeklyActivityCharts;
+

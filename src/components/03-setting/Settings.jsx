@@ -1,5 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import GenerateActivityCSV from "./GenerateActivityCSV";
+import GenerateScoreCSV from "./GenerateScoreCSV";
+import GeneratePerformanceCSV from "./GeneratePerformanceCSV";
+import GenerateSessionCSV from "./GenerateSessionCSV ";
+import GenerateConsumptionCSV from "./GenerateConsumptionCSV";
 
 /**
  * Settings component that allows users to adjust their preferences.
@@ -8,10 +13,14 @@ import PropTypes from "prop-types";
  */
 const Settings = () => {
     return (
-        <div>
+        <main>
             <h2>Réglages</h2>
-            {/* Ajoutez le contenu de la page ici */}
-        </div>
+            <GenerateActivityCSV />
+            <GenerateScoreCSV />
+            <GeneratePerformanceCSV />
+            <GenerateSessionCSV />
+            <GenerateConsumptionCSV />
+        </main>
     );
 };
 

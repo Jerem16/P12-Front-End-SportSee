@@ -1,45 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import DataLayOut from "../../../assets/data/dataLayOut.json";
-import dataMocked from "../../../assets/data/user.json"; // Corrigez cela si nécessaire
+import dataMocked from "../../../assets/data/user.json";
 import FetchData from "../../../utils/FetchData";
-import { Loader } from "../../Loader/Loader";
+import InfoConsumption from "./InfoConsumption";
 
 const SectionConsumption = () => {
     const path = process.env.REACT_APP_API_URL;
     const endPoint = "";
+    const decrementDelay = 250;
+
+    // Délai initial de base entre chaque carte (vous pouvez ajuster cette valeur)
+    const baseDelay = 550; // 1000 ms = 1 seconde
 
     return (
         <FetchData path={path} endPoint={endPoint} dataMocked={dataMocked}>
             {(apiData) => {
-                // Vérification de la structure de apiData
                 if (!apiData || !apiData.data) {
-                    return <Loader />; // Affiche un message de chargement si les données ne sont pas disponibles
+                    return null; // Retourne rien si les données ne sont pas disponibles
                 }
 
-                const keyData = apiData.data.keyData; // Assurez-vous que la structure est correcte
-                console.log("keyData", keyData);
+                const keyData = apiData.data.keyData; // Extraction des données pertinentes
 
                 return (
                     <>
-                        {DataLayOut.consumptionData.map((item) => (
+                        {DataLayOut.consumptionData.map((item, index) => (
                             <article
                                 key={item.type}
                                 className={`detail ${item.type}`}
                             >
-                                <img
-                                    className="img_consumption"
+                                <InfoConsumption
+                                    value={keyData[item.type]}
                                     src={item.image.src}
                                     alt={item.image.alt}
+                                    unit={item.unit}
+                                    description={item.image.alt.split(" ")[1]}
+                                    // Délai progressif : Chaque carte attend un peu plus longtemps que la précédente
+                                    delay={
+                                        (index + 1) * baseDelay -
+                                        index * 1.75 * decrementDelay
+                                    }
                                 />
-                                <h3 className="info_consumption">
-                                    {keyData[item.type]
-                                        ? keyData[item.type].toLocaleString(
-                                              "en-US"
-                                          )
-                                        : "N/A"}
-                                    {item.unit}
-                                    <span>{item.image.alt.split(" ")[1]}</span>
-                                </h3>
                             </article>
                         ))}
                     </>

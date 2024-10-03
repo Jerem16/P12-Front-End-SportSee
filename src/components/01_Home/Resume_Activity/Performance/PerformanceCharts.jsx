@@ -38,13 +38,10 @@ const PerformanceCharts = () => {
                 }
 
                 let formattedData = apiData.data;
-                // console.log("formattedData", formattedData);
 
                 const newData = formattedData.data;
-                // console.log("newData", newData);
 
                 const kindData = dataKindFR.kind;
-                // console.log("kindData", kindData);
 
                 // Ajout de 'subject' pour chaque entrée dans 'formattedData'
                 const formattedNewData = newData.map((item) => ({
@@ -52,7 +49,6 @@ const PerformanceCharts = () => {
                     subject: kindData[item.kind], // Assignation du bon nom de sujet
                 }));
 
-                // console.log("formattedNewData", formattedNewData);
 
                 return (
                     <ResponsiveContainer width="100%" height="100%">
@@ -89,15 +85,17 @@ const PerformanceCharts = () => {
 
                                     return (
                                         <text
+                                            
                                             x={x}
                                             y={y}
                                             textAnchor="middle"
-                                            fill="#fff" // Couleur du texte
+                                            // fill="#fff" // Couleur du texte
                                             fontFamily="Roboto" // Police de caractères
                                             fontSize="12px" // Taille de police
                                             fontWeight="500"
                                             dx={dx} // Applique le décalage horizontal
                                             dy={dy} // Applique le décalage vertical
+                                            className="perf-legend"
                                         >
                                             {payload.value}
                                         </text>
