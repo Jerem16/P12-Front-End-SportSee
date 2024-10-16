@@ -1,0 +1,287 @@
+.section-hello {
+    h2.hello {
+        @include sda-h2();
+        margin-bottom: 42px;
+        .name {
+            color: $nav-title-red;
+        }
+    }
+    .support {
+        @include sda-support();
+    }
+    height: 90px;
+    margin-bottom: 77px;
+    width: 838px;
+    // border: 1px solid #000;
+    // background: #000;
+}
+.dashboard-overview {
+    width: 100%;
+    // height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 32px;
+    margin-left: 18px;
+    padding-right: 18px;
+    // border: 1px solid #000;
+
+    .activity-summary {
+        min-width: 835px;
+        width: 100%;
+        height: 610px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        section {
+            margin: 0 auto;
+        }
+        .weekly_activity,
+        .weekly_resume-activity {
+            width: 835px;
+            width: 100%;
+            border-radius: 5px;
+
+            // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+        }
+        .weekly_activity {
+            // display: none;
+            position: relative;
+            height: 320px;
+            animation: showChartH 0.5s ease-in-out;
+            background: $sda-bg-color;
+            margin-bottom: 28px;
+            // border: 1px solid #000;
+            // padding: 24px 26px 23px 32px;
+            h2.weekly_activity-title {
+                @include weekly_activity-title();
+                margin: 10px 32px;
+                position: absolute;
+                top: 15.5px;
+            }
+            .tooltip-weekly_activity {
+                display: flex;
+                flex-flow: column wrap;
+                margin: 0 auto;
+                justify-content: center;
+                width: 39px;
+                height: 63px;
+                background: $nav-title-red;
+                @include tooltip-legend();
+            }
+        }
+        .weekly_resume-activity {
+            height: 263px;
+            // background: green;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+
+            .charts-frame {
+                width: 258px;
+                width: 100%;
+                height: 263px;
+                border-radius: 5px;
+                box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+                position: relative;
+            }
+            .session {
+                // animation: showChart 0.5s ease-in-out;
+                background: $shp-text-red-h1;
+            }
+            .performance {
+                background: $sda-graph-bar_1;
+                .perf-legend {
+                    animation: perfcolor 2.5s ease-in-out;
+                    fill: #fff;
+                    opacity: 1;
+                }
+            }
+            .score {
+                background: #fbfbfb;
+                display: flex;
+                flex-flow: column;
+                // border: 1px solid #000;
+                // justify-content: center;
+            }
+            .show-display {
+                // opacity: 1;
+                animation: showChart 0.5s ease-in-out;
+            }
+            .tooltip-weekly_activity {
+                display: flex;
+                flex-flow: column wrap;
+                margin: 0 auto;
+                justify-content: center;
+                width: 39px;
+                height: 25px;
+                background: $text-white;
+                @include tooltip-legend();
+                color: $nav-bg-black;
+            }
+            h3.session-length-title {
+                @include weekly_activity-title();
+                position: absolute;
+                color: $text-white;
+                width: 147px;
+                margin: 29px 34px;
+                opacity: 0.5;
+            }
+            h3.score-title {
+                @include weekly_activity-title();
+                position: absolute;
+                color: $sda-graph-bar_1;
+                width: 147px;
+                margin: 25px 30px;
+            }
+            p.resume {
+                @include sra-f3-percentage();
+                position: absolute;
+                top: 108px;
+                top: calc(100% - 86px * 2);
+                display: flex;
+                flex-flow: column;
+                align-self: center;
+                width: 95px;
+                height: 89px;
+                text-align: center;
+                animation: showDisplay 0.5s ease-in-out;
+                // border: 1px solid #000;
+                span {
+                    @include sra-f3-grey();
+                    width: 95px;
+                    margin: 4px 0px;
+                }
+            }
+            @keyframes showChartH {
+                from {
+                    // background: $sda-graph-bar_1;
+                    height: 0;
+                    opacity: 0;
+                    // transform: scaleX(0);
+                }
+
+                to {
+                    height: 320px;
+                    opacity: 1;
+                    // background: $shp-text-red-h1;
+                    // max-width: 86px;
+                    // transform: scaleX(1);
+                }
+            }
+            @keyframes perfcolor {
+                from {
+                    // background: white;
+                    // fill: #fff;
+                    fill: $sda-graph-bar_1;
+                    // height: 0;
+                    opacity: 0;
+                    // transform: scaleX(0);
+                }
+                25% {
+                    fill: $sda-graph-bar_1;
+                }
+
+                to {
+                    // height: 320px;
+                    opacity: 1;
+                    // background: white;
+
+                    // max-width: 86px;
+                    // transform: scaleX(1);
+                }
+            }
+            @keyframes showChart {
+                from {
+                    // background: $sda-graph-bar_1;
+                    background-color: white;
+
+                    width: 0;
+                    opacity: 0;
+                    // transform: scaleX(0);
+                }
+
+                to {
+                    width: 100%;
+                    opacity: 1;
+                    // background: $shp-text-red-h1;
+                    // max-width: 86px;
+                    // transform: scaleX(1);
+                }
+            }
+            @keyframes showDisplay {
+                from {
+                    opacity: 0;
+                    // transform: scaleX(0);
+                }
+
+                to {
+                    opacity: 1;
+                    // max-width: 86px;
+                    // transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1439px) {
+        flex-flow: column; // Passe les éléments en colonne
+        .activity-summary,
+        .daily_consumption {
+            width: 100%; // Assure-toi qu'ils prennent 100% de la largeur
+        }
+    }
+
+    .daily_consumption {
+        min-width: 258px;
+        width: 100%;
+        height: 613px;
+        // background: $sda-bg-color;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        margin: 0;
+        animation: showDisplay 0.15s ease-in-out;
+
+        .detail {
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+            min-width: 258px;
+            min-width: 100%;
+            height: 124px;
+            background: $sda-bg-color;
+            // border: 1px solid #000;
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px;
+
+            // flex-flow: row wrap;
+            .img_consumption {
+                width: 60px;
+                height: 60px;
+                // background: #000;
+                animation: showDisplay 0.35s ease-in-out;
+            }
+            .info_consumption {
+                animation: showDisplay 0.75s ease-in-out;
+                width: 110px;
+                height: 60px;
+                margin-top: 10px;
+                // background: #000;
+                @include sc-text-dark();
+                display: flex;
+                flex-flow: row wrap;
+                span {
+                    width: 110px;
+                    display: block;
+                    @include sc-text-grey();
+                }
+            }
+        }
+    }
+}

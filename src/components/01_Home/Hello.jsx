@@ -25,7 +25,6 @@ const Hello = () => {
             dataMocked={dataMocked}
         >
             {(apiData) => {
-                // Supposons que todayScore retourne 0.12 (12%)
                 const firstName = apiData?.data?.userInfos?.firstName;
 
                 return (

@@ -5,6 +5,7 @@ import GenerateScoreCSV from "./GenerateScoreCSV";
 import GeneratePerformanceCSV from "./GeneratePerformanceCSV";
 import GenerateSessionCSV from "./GenerateSessionCSV ";
 import GenerateConsumptionCSV from "./GenerateConsumptionCSV";
+import ToggleMockDataButton from "./toggleMockData";
 
 /**
  * Settings component that allows users to adjust their preferences.
@@ -20,6 +21,8 @@ const Settings = () => {
             <GeneratePerformanceCSV />
             <GenerateSessionCSV />
             <GenerateConsumptionCSV />
+            <h2>Mocked Data</h2>
+            <ToggleMockDataButton />
         </main>
     );
 };

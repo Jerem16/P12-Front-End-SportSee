@@ -4,7 +4,9 @@
         "userInfos": {
             "firstName": "Guy Mocked",
             "lastName": "Dovineau",
-            "age": 31
+            "age": 31,
+            "picture": "http://localhost:8080/images/4.jpeg",
+            "location": "Lyon"
         },
         "todayScore": 0.37,
         "keyData": {

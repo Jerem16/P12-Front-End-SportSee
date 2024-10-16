@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Users from "./Users";
 
 /**
  * Community component that displays community features.
@@ -8,10 +9,10 @@ import PropTypes from "prop-types";
  */
 const Community = () => {
     return (
-        <div>
+        <main>
             <h2>Communauté</h2>
-            {/* Ajoutez le contenu de la page ici */}
-        </div>
+            <Users />
+        </main>
     );
 };
 
