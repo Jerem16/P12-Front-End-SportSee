@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import FetchData from "../../../../utils/FetchData";
+import convertDayToLetter from "../../../../utils/convertDayToLetter";
 import dataMocked from "../../../../assets/data/sessions.json";
 import SessionLengthTitle from "./SessionLengthTitle";
 import { CustomXAxisTick, CustomCursor, CustomActiveDot } from "./CustomShapes";
@@ -12,35 +13,13 @@ import {
     Tooltip,
     ResponsiveContainer,
 } from "recharts";
-import { UserContext } from "../../../../utils/UserContext";
 
 const SessionLengthCharts = () => {
     const path = process.env.REACT_APP_API_URL;
-    // const { userId, useMockData } = useContext(UserContext);
     const endPoint = "average-sessions";
 
-    // Fonction pour convertir les jours en abréviations
-    function convertDayToLetter(day) {
-        const dayMap = {
-            1: "L", // Lundi
-            2: "Me", // Mardi
-            3: "M", // Mercredi
-            4: "J", // Jeudi
-            5: "V", // Vendredi
-            6: "S", // Samedi
-            7: "D", // Dimanche
-        };
-        return dayMap[day] || ""; // Retourne une chaîne vide si le jour n'est pas valide
-    }
-
     return (
-        <FetchData
-            path={path}
-            // userId={userId}
-            endPoint={endPoint}
-            // useMockData={useMockData}
-            dataMocked={dataMocked}
-        >
+        <FetchData path={path} endPoint={endPoint} dataMocked={dataMocked}>
             {(apiData) => {
                 // Récupération et formatage des données
                 let formattedData = apiData?.data?.sessions || [];
@@ -99,8 +78,6 @@ const SessionLengthCharts = () => {
                                     cursor={<CustomCursor width={40} />}
                                     offset={50}
                                     dot={false}
-                                    // activeDot={<CustomActiveDot />}
-                                    // cursor={<CustomCursor width={40} />}
                                     content={({ active, payload }) => {
                                         if (
                                             active &&
