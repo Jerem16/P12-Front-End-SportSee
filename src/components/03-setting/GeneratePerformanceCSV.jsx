@@ -32,7 +32,7 @@ const GeneratePerformanceCSV = () => {
                         fileName="PerformanceData"
                         isLoading={loading}
                         setLoading={setLoading}
-                        buttonText="Télécharger les données de performance en CSV"
+                        buttonText="Données : Ma performance journalière"
                     />
                 );
             }}

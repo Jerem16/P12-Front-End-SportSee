@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { UserContext } from "../../utils/UserContext";
 import Hello from "./Hello";
 import WeeklyActivityCharts from "./Activity/WeeklyActivityCharts";
 import ResumeActivity from "./Resume_Activity/ResumeActivity";
@@ -10,6 +12,14 @@ import SectionConsumption from "./Consumption/SectionConsumption";
  * @returns {JSX.Element} The rendered Home component
  */
 const Home = () => {
+    const { userId, setUserId } = useContext(UserContext);
+    const { id } = useParams(); // Récupère l'ID depuis l'URL
+
+    useEffect(() => {
+        if (id) {
+            setUserId(parseInt(id)); // Met à jour l'ID utilisateur dans le contexte
+        }
+    }, [id, setUserId]);
     return (
         <main>
             <section className="section-hello">

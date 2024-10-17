@@ -10,8 +10,10 @@ import Users from "./Users";
 const Community = () => {
     return (
         <main>
-            <h2>Communauté</h2>
-            <Users />
+            <h2 className="hello">Communauté</h2>
+            <div className="container">
+                <Users />
+            </div>
         </main>
     );
 };

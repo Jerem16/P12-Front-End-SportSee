@@ -31,7 +31,7 @@ const GenerateSessionCSV = () => {
                         fileName="SessionLengthData"
                         isLoading={loading}
                         setLoading={setLoading}
-                        buttonText="Télécharger les données des sessions en CSV"
+                        buttonText="Données : Durée moyenne des sessions"
                     />
                 );
             }}

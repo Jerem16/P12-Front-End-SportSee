@@ -15,14 +15,21 @@ import ToggleMockDataButton from "./toggleMockData";
 const Settings = () => {
     return (
         <main>
-            <h2>Réglages</h2>
-            <GenerateActivityCSV />
-            <GenerateScoreCSV />
-            <GeneratePerformanceCSV />
-            <GenerateSessionCSV />
-            <GenerateConsumptionCSV />
-            <h2>Mocked Data</h2>
-            <ToggleMockDataButton />
+            <h2 className="hello">Réglages</h2>
+            <section className="data-download">
+                <h3 className="h3">Téléchargement de données CSV</h3>
+                <div className="data-group">
+                    <GenerateActivityCSV />
+                    <GenerateScoreCSV />
+                    <GeneratePerformanceCSV />
+                    <GenerateSessionCSV />
+                    <GenerateConsumptionCSV />
+                </div>
+            </section>
+            <section className="data-download">
+                <h3 className="h3">Mocked Data</h3>
+                <ToggleMockDataButton />
+            </section>
         </main>
     );
 };

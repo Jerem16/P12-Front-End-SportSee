@@ -23,7 +23,7 @@ const GenerateActivityCSV = () => {
                         fileName="Activity"
                         isLoading={loading}
                         setLoading={setLoading}
-                        buttonText="Télécharger les données d'activité en CSV"
+                        buttonText="Données : Mon activité quotidienne"
                     />
                 );
             }}

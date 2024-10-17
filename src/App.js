@@ -18,6 +18,8 @@ function App() {
                 <NavInterface />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/:id" element={<Home />} />{" "}
+                    {/* Route dynamique pour l'ID utilisateur */}
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/setting" element={<Settings />} />
                     <Route path="/community" element={<Community />} />

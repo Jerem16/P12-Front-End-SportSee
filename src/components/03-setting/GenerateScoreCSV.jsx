@@ -32,7 +32,7 @@ const GenerateScoreCSV = () => {
                         fileName={name}
                         isLoading={loading}
                         setLoading={setLoading}
-                        buttonText={`Télécharger les données de ${name} au format CSV`}
+                        buttonText={`Données : Mon score journalier`}
                     />
                 );
             }}

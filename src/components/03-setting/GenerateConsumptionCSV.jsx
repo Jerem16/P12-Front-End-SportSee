@@ -31,7 +31,7 @@ const GenerateConsumptionCSV = () => {
                         fileName="ConsumptionData"
                         isLoading={loading}
                         setLoading={setLoading}
-                        buttonText="Télécharger les données de consommation en CSV"
+                        buttonText="Données : Ma consommation quotidienne"
                     />
                 );
             }}

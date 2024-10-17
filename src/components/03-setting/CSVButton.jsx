@@ -24,9 +24,10 @@ const CSVButton = ({ data, fileName, isLoading, setLoading, buttonText }) => {
     };
 
     return (
-        <div>
-            <button onClick={handleDownloadCSV} disabled={isLoading}>
-                {isLoading ? <Loader /> : buttonText}
+        <div className="download">
+            <p className="support">{buttonText}</p>
+            <button  className="CSV-Button" onClick={handleDownloadCSV} disabled={isLoading}>
+                {isLoading ? <Loader /> : "Télécharger"}
             </button>
         </div>
     );
