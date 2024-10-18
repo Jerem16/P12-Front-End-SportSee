@@ -16,4 +16,6 @@ const NavInterface = () => {
     );
 };
 
+// There is no PropTypes here.
+
 export default NavInterface;

@@ -20,6 +20,13 @@ import {
     CustomYAxisTick,
 } from "./CustomShapes";
 
+/**
+ * WeeklyActivityCharts component that displays a bar chart of weekly activity.
+ * @component
+ * @constant {string} path - Base URL for the API,
+ * @constant {string} endPoint - Endpoint for fetching data from the API.
+ * @returns {JSX.Element} The rendered WeeklyActivityCharts component
+ */
 const WeeklyActivityCharts = () => {
     const path = process.env.REACT_APP_API_URL;
     const endPoint = "activity";
@@ -171,5 +178,6 @@ const WeeklyActivityCharts = () => {
     );
 };
 
-export default WeeklyActivityCharts;
+// There is no PropTypes here.
 
+export default WeeklyActivityCharts;

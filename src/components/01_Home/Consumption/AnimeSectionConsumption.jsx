@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import DataLayOut from "../../../assets/data/dataLayOut.json";
 import dataMocked from "../../../assets/data/user.json";
 import FetchData from "../../../utils/FetchData";
 import InfoConsumption from "./InfoConsumption";
 
+/**
+ * SectionConsumption component that fetches and displays user consumption data.
+ * @component
+ * @returns {JSX.Element|null} The rendered SectionConsumption component or null if no data is available
+ */
 const SectionConsumption = () => {
     const path = process.env.REACT_APP_API_URL;
     const endPoint = "";
@@ -48,5 +53,7 @@ const SectionConsumption = () => {
         </FetchData>
     );
 };
+
+// There is no PropTypes here.
 
 export default SectionConsumption;

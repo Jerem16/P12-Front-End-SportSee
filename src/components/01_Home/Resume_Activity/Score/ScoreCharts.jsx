@@ -1,23 +1,24 @@
-import React, { useContext } from "react";
+import React from "react";
 import ScoreTitle from "./ScoreTitle";
 import FetchData from "../../../../utils/FetchData";
 import dataMocked from "../../../../assets/data/user.json";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import ScoreDisplay from "./ScoreDisplay";
 
+/**
+ * ScoreCharts component that renders a pie chart displaying the user's score for the day.
+ * It fetches data from an API or uses mocked data if specified.
+ * @component
+ * @constant {string} path - Base URL for the API,
+ * @constant {string} endPoint - Endpoint for fetching data from the API.
+ * @returns {JSX.Element} The rendered ScoreCharts component
+ */
 const ScoreCharts = () => {
     const path = process.env.REACT_APP_API_URL;
-    // const { userId, useMockData } = useContext(UserContext);
     const endPoint = "";
 
     return (
-        <FetchData
-            path={path}
-            // userId={userId}
-            endPoint={endPoint}
-            // useMockData={useMockData}
-            dataMocked={dataMocked}
-        >
+        <FetchData path={path} endPoint={endPoint} dataMocked={dataMocked}>
             {(apiData) => {
                 // Supposons que todayScore retourne 0.12 (12%)
                 const todayScore = apiData?.data?.todayScore;
@@ -76,5 +77,7 @@ const ScoreCharts = () => {
         </FetchData>
     );
 };
+
+// There is no PropTypes here.
 
 export default ScoreCharts;

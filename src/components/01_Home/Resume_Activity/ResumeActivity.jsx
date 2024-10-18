@@ -20,10 +20,22 @@ const chartData = {
     ],
 };
 
+/**
+ * ResumeActivity component that displays a series of charts with animation.
+ * It animates the appearance of each chart based on defined delays.
+ * @component
+ * @constant {number} durationBeforeStart Delay before starting the animation of the charts (ms).
+ * @constant {number} delayBetweenCharts Delay between the appearance of each chart (ms).
+ * @returns {JSX.Element} The rendered ResumeActivity component
+ */
 const ResumeActivity = () => {
+    /**
+     * State to keep track of which charts are currently visible.
+     * @type {Array<Object>}
+     */
     const [visibleCharts, setVisibleCharts] = useState([]);
-    const durationBeforeStart = 1000; // Délai avant de commencer l'animation (en ms)
-    const delayBetweenCharts = 500; // Délai entre chaque graphique (en ms)
+    const durationBeforeStart = 1000;
+    const delayBetweenCharts = 500;
 
     useEffect(() => {
         const animateValue = () => {
@@ -58,5 +70,7 @@ const ResumeActivity = () => {
         </>
     );
 };
+
+// There is no PropTypes here.
 
 export default ResumeActivity;

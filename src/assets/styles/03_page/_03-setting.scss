@@ -20,31 +20,24 @@ h3.h3 {
     justify-content: space-between;
     align-items: center;
     height: 40px;
-    // border: 1px solid #000;
     margin-bottom: 10px;
     cursor: pointer;
     .support,
     .CSV-Button {
         @include sda-support();
         width: 340px;
-        // border: 1px solid #000;
     }
     .CSV-Button {
         width: 126px;
-        // padding: 2px 4px;
         background: $sda-bg-color;
         color: $nav-title-red;
         border-color: red;
-
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 5px 15px;
         border-radius: 6px;
-
-        cursor: pointer;
         transition: background-color 0.3s ease;
-        // width: 100%;
         cursor: pointer;
         &:hover {
             border-color: $sda-border-dash-color;
@@ -60,47 +53,51 @@ h3.h3 {
     max-width: 560px;
     margin-left: 0;
     margin-bottom: 42px;
-    background-color: #f9f9f9; /* Couleur de fond douce pour la section */
+    background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .toggle-button {
+    position: absolute;
+    z-index: 1;
     display: flex;
-    flex-direction: column; /* Affiche les éléments en colonne */
+    flex-direction: column;
     align-items: center;
-    // padding: 15px; /* Espace autour du contenu */
     border: none;
-    border-radius: 8px; /* Coins arrondis */
-    background-color: transparent; /* Couleur de fond bleu */
-    color: #fff; /* Couleur du texte */
+    height: 25px;
+    width: 280px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Effets de transition */
-    outline: none; /* Enlève le contour par défaut */
-    @include sda-support();
-}
-
-.toggle-button:hover {
-    // background-color: #0056b3; /* Couleur au survol */
-    // transform: translateY(-2px); /* Légère élévation au survol */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    outline: none;
 }
 
 .button-content {
+    @include sda-support();
     display: flex;
-    align-items: center; /* Aligne la case à cocher avec le texte */
+    align-items: center;
+    position: relative;
+    z-index: 0;
 }
 
 .data-text {
-    margin: 0; /* Supprime la marge par défaut */
-    /* Texte en gras */
+    margin: 0;
 }
 
 .status-text {
-    margin: 0 10px; /* Espace horizontal entre les textes */
-    @include sda-support();font-weight: 500;
-    // border: 1px solid #000;
-    // width: 100px;
+    margin: 0 10px;
+    @include sda-support();
+    font-weight: 500;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
 }
 
 .toggle-checkbox {
-    margin-left: 10px; /* Espace entre le texte et la case à cocher */
+    margin-left: 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
 }

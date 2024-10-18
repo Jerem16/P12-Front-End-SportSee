@@ -15,4 +15,6 @@ const Profile = () => {
     );
 };
 
+// There is no PropTypes here.
+
 export default Profile;

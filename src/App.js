@@ -8,8 +8,10 @@ import Community from "./components/04-community/Community";
 
 /**
  * App component that sets up the main application structure, including routing.
+ * It includes a navigation interface and several routes for different sections of the application.
+ *
  * @component
- * @returns {JSX.Element} The rendered App component
+ * @returns {JSX.Element} The rendered App component with navigation and routing.
  */
 function App() {
     return (
@@ -19,7 +21,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/:id" element={<Home />} />{" "}
-                    {/* Route dynamique pour l'ID utilisateur */}
+                    {/* Dynamic route for user ID */}
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/setting" element={<Settings />} />
                     <Route path="/community" element={<Community />} />

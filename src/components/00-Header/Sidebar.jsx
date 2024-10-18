@@ -16,4 +16,6 @@ const Sidebar = () => {
     );
 };
 
+// There is no PropTypes here.
+
 export default Sidebar;

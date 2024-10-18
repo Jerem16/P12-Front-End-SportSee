@@ -1,10 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const ScoreTitle = (props) => {
+/**
+ * ScoreTitle component that renders a title for the score section.
+ * @component
+ * @returns {JSX.Element} The rendered ScoreTitle component
+ */
+const ScoreTitle = () => {
     return <h3 className="score-title">Score</h3>;
 };
 
-ScoreTitle.propTypes = {};
+// There is no PropTypes here.
 
 export default ScoreTitle;

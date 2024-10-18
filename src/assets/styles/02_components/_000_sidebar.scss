@@ -3,31 +3,24 @@
 .sidebar {
     width: 117px;
     min-height: calc(726px - 0px);
-    // min-height: calc(1024px - 0px);
     height: 100vh;
     background-color: $nav-bg-black;
-    // background-color: $text-grey;
     display: flex;
     align-items: center;
     gap: 20px;
-
     justify-content: space-between;
     padding-bottom: 15px;
     padding-left: 26px;
     padding-right: 26px;
     position: fixed;
     top: 0px;
-    // left: 0;
     z-index: 99;
     box-shadow: 4px 0px 4px 0px rgba(0, 0, 0, 0.25);
     .side-nav {
         position: relative;
-        // top: -45px;
         left: 0;
         width: 64px;
         height: 316px;
-        // background: rgb(255, 0, 0);
-        // border: 1px solid #fff;
         .side-icon {
             width: 64px;
             height: 64px;
@@ -61,8 +54,6 @@
             }
             &:active {
                 box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.35);
-                // box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 1, 10.25);
-                // box-shadow: inset 2px 2px gold;
                 position: relative;
                 transform: scale(1);
                 transition: none;
@@ -72,15 +63,12 @@
                     animation: sport-icon-V2 0.3s linear;
                     fill: #fff;
                     @include drop-shadow(1px 1px rgba(0, 0, 0, 0.35));
-                    // fill: #ff0101;
                     opacity: 1;
                 }
                 .white-bg_icon {
-                    // animation: sport-icon 1s linear;
                     fill: #ff0101;
                     fill: blue;
                     opacity: 0;
-                    // box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 1, 10.25);
                     box-shadow: inset 5px 5px gold;
                 }
             }
@@ -124,23 +112,15 @@
         width: 24px;
         height: 146px;
         bottom: 49px;
-        // top: 965px;
+
         left: 42px;
-        // background: green;
-        // z-index: 1000;
+
         .vertical-text {
-            writing-mode: vertical-rl; /* Texte en vertical, de droite à gauche */
-            transform: rotate(
-                180deg
-            ); /* Si vous souhaitez inverser la direction du texte */
-            text-align: right; /* Centrer le texte horizontalement dans son conteneur */
-            // width: 24px;
-            // height: 148px;
-            // top: 965px;
-            // left: 42px;
-            // opacity: 0px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            text-align: right;
+
             @include side-copyright;
-            // color: blue;
         }
     }
 }

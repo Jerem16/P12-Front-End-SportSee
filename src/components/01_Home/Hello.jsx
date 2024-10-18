@@ -8,13 +8,16 @@ import { UserContext } from "../../utils/UserContext";
 /**
  * Hello component that renders the Hellopage content.
  * @component
+ * @constant {string} path - Base URL for the API,
+ * @constant {string} endPoint - Endpoint for fetching data
+ * @constant {number} userId - Context Endpoint of the user ID for fetching data
+ * @constant {bool} useMockData - Context to selected mocked Data
  * @returns {JSX.Element} The rendered Hello component
  */
 const Hello = () => {
-    // const firstName = user.data.userInfos.firstName; // Récupération du prénom
-    const path = process.env.REACT_APP_API_URL;
-    const { userId, useMockData } = useContext(UserContext);
-    const endPoint = "";
+    const path = process.env.REACT_APP_API_URL; // Base URL for the API
+    const { userId, useMockData } = useContext(UserContext); // Context for user ID and mock data usage
+    const endPoint = ""; // Endpoint for fetching data
 
     return (
         <FetchData
@@ -33,7 +36,7 @@ const Hello = () => {
                             Bonjour <span className="name">{firstName}</span>
                         </h2>
                         <p className="support">
-                            Félicitation ! Vous avez explosé vos objectifs hier
+                            Félicitations ! Vous avez explosé vos objectifs hier
                             👏
                         </p>
                     </>
@@ -41,6 +44,12 @@ const Hello = () => {
             }}
         </FetchData>
     );
+};
+
+// Define PropTypes for Hello the Props not defined in component but used in React useContext
+Hello.propTypes = {
+    userId: PropTypes.number, // Expected user ID type
+    useMockData: PropTypes.bool, // Expected type for using mock data
 };
 
 export default Hello;

@@ -22,9 +22,9 @@ const NavLink = ({ label, path, title }) => {
 };
 
 NavLink.propTypes = {
-    label: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired, // The text label for the link
+    path: PropTypes.string.isRequired, // The destination path for the link
+    title: PropTypes.string.isRequired, // The title of the link for accessibility
 };
 
 export default NavLink;

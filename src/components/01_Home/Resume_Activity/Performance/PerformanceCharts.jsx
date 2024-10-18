@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import FetchData from "../../../../utils/FetchData";
 import dataMocked from "../../../../assets/data/performance.json";
 import dataKindFR from "../../../../assets/data/kind-FR.json";
@@ -8,14 +8,19 @@ import {
     PolarAngleAxis,
     PolarRadiusAxis,
     Radar,
-    RadialBar,
     ResponsiveContainer,
 } from "recharts";
-import { UserContext } from "../../../../utils/UserContext";
 
+/**
+ * PerformanceCharts component that displays a radar chart based on user performance data.
+ * It fetches data from an API or uses mocked data if specified.
+ * @component
+ * @constant {string} path - Base URL for the API,
+ * @constant {string} endPoint - Endpoint for fetching data from the API.
+ * @returns {JSX.Element} The rendered PerformanceCharts component
+ */
 const PerformanceCharts = () => {
     const path = process.env.REACT_APP_API_URL;
-    // const { userId, useMockData } = useContext(UserContext);
     const endPoint = "performance";
 
     return (
@@ -48,7 +53,6 @@ const PerformanceCharts = () => {
                     ...item,
                     subject: kindData[item.kind], // Assignation du bon nom de sujet
                 }));
-
 
                 return (
                     <ResponsiveContainer width="100%" height="100%">
@@ -85,7 +89,6 @@ const PerformanceCharts = () => {
 
                                     return (
                                         <text
-                                            
                                             x={x}
                                             y={y}
                                             textAnchor="middle"
@@ -117,5 +120,7 @@ const PerformanceCharts = () => {
         </FetchData>
     );
 };
+
+// There is no PropTypes here.
 
 export default PerformanceCharts;
