@@ -40,6 +40,7 @@ const ResumeActivity = () => {
     useEffect(() => {
         const animateValue = () => {
             chartData.charts.forEach((chart, index) => {
+                // eslint-disable-next-line
                 const timeout = setTimeout(() => {
                     setVisibleCharts((prev) => [...prev, chart]);
                 }, (index + index) * delayBetweenCharts); // Délai basé sur l'index

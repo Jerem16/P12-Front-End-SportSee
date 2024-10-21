@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import user from "../../assets/data/user.json"; // Assurez-vous que le chemin d'importation est correct
 import FetchData from "../../utils/FetchData";
 import dataMocked from "../../assets/data/user.json";
 import { UserContext } from "../../utils/UserContext";

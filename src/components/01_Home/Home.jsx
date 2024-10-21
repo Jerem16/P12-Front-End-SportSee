@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
  * @returns {JSX.Element} The rendered Home component
  */
 const Home = () => {
-    const { userId, setUserId } = useContext(UserContext); // Accessing userId and setUserId from UserContext
+    const { setUserId } = useContext(UserContext); // Accessing userId and setUserId from UserContext
     const { id } = useParams(); // Extracting the ID from the URL
 
     useEffect(() => {

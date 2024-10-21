@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import DataLayOut from "../../../assets/data/dataLayOut.json";
 import dataMocked from "../../../assets/data/user.json";
 import FetchData from "../../../utils/FetchData";

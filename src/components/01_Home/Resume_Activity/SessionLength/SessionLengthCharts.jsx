@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import FetchData from "../../../../utils/FetchData";
 import convertDayToLetter from "../../../../utils/convertDayToLetter";
 import dataMocked from "../../../../assets/data/sessions.json";
@@ -139,5 +139,7 @@ const SessionLengthCharts = () => {
         </FetchData>
     );
 };
+
+// There is no PropTypes here.
 
 export default SessionLengthCharts;

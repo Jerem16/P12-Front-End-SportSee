@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 /**
  * Profile component that displays user profile information.

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 /**
  * WeeklyActivityTitle component that displays the title for the weekly activity section.

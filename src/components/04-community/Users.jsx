@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Importer Link
-import { UserContext } from "../../utils/UserContext";
 
 const Users = () => {
     const path = "http://localhost:8080";
     const allUsersIds = "/users";
     const userDetailEndPoint = "/user/";
     const [users, setUsers] = useState([]);
+    // eslint-disable-next-line
     const [userIds, setUserIds] = useState([]);
 
     const fetchUserIds = async () => {

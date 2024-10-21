@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import WeeklyActivityTitle from "./WeeklyActivityTitle";
 import FetchData from "../../../utils/FetchData";
 import dataMocked from "../../../assets/data/activity.json";
-import { UserContext } from "../../../utils/UserContext";
 import { fetchActivities } from "../../../utils/apiEndpoints";
 import {
     BarChart,

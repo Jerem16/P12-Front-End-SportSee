@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import FetchData from "../../utils/FetchData";
 import { UserContext } from "../../utils/UserContext";
 
 /**
