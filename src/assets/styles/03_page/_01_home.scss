@@ -39,8 +39,6 @@ h2.hello {
             width: 835px;
             width: 100%;
             border-radius: 5px;
-
-            // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
         }
         .weekly_activity {
             // display: none;
@@ -49,8 +47,6 @@ h2.hello {
             animation: showChartH 0.5s ease-in-out;
             background: $sda-bg-color;
             margin-bottom: 28px;
-            // border: 1px solid #000;
-            // padding: 24px 26px 23px 32px;
             h2.weekly_activity-title {
                 @include weekly_activity-title();
                 margin: 10px 32px;
@@ -84,7 +80,6 @@ h2.hello {
                 position: relative;
             }
             .session {
-                // animation: showChart 0.5s ease-in-out;
                 background: $shp-text-red-h1;
             }
             .performance {
@@ -99,8 +94,6 @@ h2.hello {
                 background: #fbfbfb;
                 display: flex;
                 flex-flow: column;
-                // border: 1px solid #000;
-                // justify-content: center;
             }
             .show-display {
                 // opacity: 1;
@@ -144,7 +137,6 @@ h2.hello {
                 height: 89px;
                 text-align: center;
                 animation: showDisplay 0.5s ease-in-out;
-                // border: 1px solid #000;
                 span {
                     @include sra-f3-grey();
                     width: 95px;
@@ -153,70 +145,48 @@ h2.hello {
             }
             @keyframes showChartH {
                 from {
-                    // background: $sda-graph-bar_1;
                     height: 0;
                     opacity: 0;
-                    // transform: scaleX(0);
                 }
 
                 to {
                     height: 320px;
                     opacity: 1;
-                    // background: $shp-text-red-h1;
-                    // max-width: 86px;
-                    // transform: scaleX(1);
                 }
             }
             @keyframes perfcolor {
                 from {
-                    // background: white;
-                    // fill: #fff;
                     fill: $sda-graph-bar_1;
-                    // height: 0;
                     opacity: 0;
-                    // transform: scaleX(0);
                 }
                 25% {
                     fill: $sda-graph-bar_1;
                 }
 
                 to {
-                    // height: 320px;
                     opacity: 1;
-                    // background: white;
-
-                    // max-width: 86px;
-                    // transform: scaleX(1);
                 }
             }
             @keyframes showChart {
                 from {
-                    // background: $sda-graph-bar_1;
                     background-color: white;
 
                     width: 0;
                     opacity: 0;
-                    // transform: scaleX(0);
                 }
 
                 to {
                     width: 100%;
                     opacity: 1;
-                    // background: $shp-text-red-h1;
-                    // max-width: 86px;
-                    // transform: scaleX(1);
                 }
             }
             @keyframes showDisplay {
                 from {
                     opacity: 0;
-                    // transform: scaleX(0);
                 }
 
                 to {
                     opacity: 1;
-                    // max-width: 86px;
-                    // transform: scaleX(1);
                 }
             }
         }
@@ -280,10 +250,46 @@ h2.hello {
 @media (max-width: 1439px) {
     .dashboard-overview {
         .daily_consumption {
+            height: 500px;
+            position: relative;
             gap: 30px;
             height: auto;
             .detail {
                 max-width: calc(50% - 15px) !important;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    body {
+        .dashboard-overview {
+            .activity-summary {
+                min-width: 0px;
+                .weekly_resume-activity {
+                    // height: 263px;
+                    height: auto;
+                    // background: green;
+                    // display: flex;
+                    flex-flow: wrap;
+                    // justify-content: space-between;
+                    // gap: 30px;
+                    .charts-frame:nth-child(1) {
+                        min-width: 258px;
+                        width: 100%;
+                        // height: 263px;
+                        // border-radius: 5px;
+                        // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+                        // position: relative;
+                    }
+                    .charts-frame {
+                        min-width: 258px;
+                        width: calc(50% - 15px);
+                        height: 263px;
+                        border-radius: 5px;
+                        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+                        position: relative;
+                    }
+                }
             }
         }
     }

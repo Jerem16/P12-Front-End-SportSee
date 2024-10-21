@@ -3,7 +3,8 @@
 .sidebar {
     width: 117px;
     min-height: calc(726px - 0px);
-    height: 100vh;
+    // height: calc(100vh + 83px);
+    height: 100%;
     background-color: $nav-bg-black;
     display: flex;
     align-items: center;

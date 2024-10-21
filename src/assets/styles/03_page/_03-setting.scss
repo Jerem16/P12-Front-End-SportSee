@@ -50,7 +50,8 @@ h3.h3 {
 }
 .data-download {
     padding: 20px;
-    max-width: 560px;
+    width: 560px;
+    min-width: 334px;
     margin-left: 0;
     margin-bottom: 42px;
     background-color: #f9f9f9;

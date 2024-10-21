@@ -5,10 +5,30 @@ main {
     margin-left: 117px;
     width: calc(100% - 117px);
     height: auto;
+    height: 1024px;
     background: $text-white;
     padding: calc(90px + 68px) 90px 70px 90px;
     section {
         margin-left: 18px;
         animation: showDisplay 0.35s ease-in-out;
+    }
+}
+@media screen and (max-width: 1439px) {
+    main {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin-left: 117px;
+
+        width: calc(100% - 117px);
+        min-height: 100vh;
+        height: fit-content;
+
+        background: $text-white;
+        padding: calc(90px + 68px) 6.254vw 70px 6.254vw;
+        section {
+            margin-left: 18px;
+            animation: showDisplay 0.35s ease-in-out;
+        }
     }
 }
