@@ -8,7 +8,7 @@ export const Loader = () => {
     );
 };
 
-// export default React.memo(Loader);
+export default React.memo(Loader);
 
 export const Loading = () => {
     return <div className="loading"></div>;

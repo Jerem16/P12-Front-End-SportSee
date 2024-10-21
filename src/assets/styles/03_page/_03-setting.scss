@@ -12,42 +12,63 @@ h3.h3 {
     font-weight: 500;
     margin-bottom: 20px;
 }
-.download {
-    width: 100%;
-    max-width: 500px;
-    display: inline-flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    .support,
-    .CSV-Button {
-        @include sda-support();
-        width: 340px;
+.data-group {
+    max-height: 520px;
+    .loader-wrapper {
+        background-color: transparent;
+        width: 520px !important;
+        height: 40px;
+        margin-bottom: 10px;
+        text-align: left !important;
+        p {
+            text-align: left;
+            width: 100%;
+            @include sda-support();
+        }
+        .loading {
+            position: absolute;
+            float: right;
+            right: 60px;
+        }
     }
-    .CSV-Button {
-        width: 126px;
-        background: $sda-bg-color;
-        color: $nav-title-red;
-        border-color: red;
-        display: flex;
+    .download {
+        width: 100%;
+        max-width: 500px;
+        display: inline-flex;
+        flex-flow: row;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        padding: 5px 15px;
-        border-radius: 6px;
-        transition: background-color 0.3s ease;
+        height: 40px;
+        margin-bottom: 10px;
         cursor: pointer;
-        &:hover {
-            border-color: $sda-border-dash-color;
-            box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.35);
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
-            background: $nav-title-red;
-            color: $text-white;
+        .support,
+        .CSV-Button {
+            @include sda-support();
+            width: 340px;
+        }
+        .CSV-Button {
+            width: 126px;
+            background: $sda-bg-color;
+            color: $nav-title-red;
+            border-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 15px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            &:hover {
+                border-color: $sda-border-dash-color;
+                box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.35);
+                text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+                background: $nav-title-red;
+                color: $text-white;
+            }
         }
     }
 }
+
 .data-download {
     padding: 20px;
     width: 560px;
